@@ -20,7 +20,7 @@ public class MyWorld extends World
         
         Button x = new Button(100, 100, 300, 80, "button");
         
-        PhysicalObject z = new PhysicalObject(50, 50);
+        PhysicalObject z = new Helicopter(50, 50, "Bob");
         addObject(z, 30, 30);
         
         addObject(x, x.getx(), x.gety());

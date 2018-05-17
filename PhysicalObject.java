@@ -21,6 +21,7 @@ public class PhysicalObject extends Actor
     }
     
     public PhysicalObject(int w, int h) {
+        //TODO use other constructor
         this.w = w;
         this.h = h;
         this.vx = 0;
@@ -41,4 +42,25 @@ public class PhysicalObject extends Actor
         
         // Add your action code here.
     }    
+    
+    public int getw() {
+        return w;
+    }
+    
+    public int geth(){
+        return h;
+    }
+    
+    public double getvx(){
+        return vx;
+    }
+    public double getvy(){
+        return vy;
+    }
+    public void setvx(double n){
+        vx = n;
+    }
+    public void setvy(double n){
+        vy = n;
+    }
 }
