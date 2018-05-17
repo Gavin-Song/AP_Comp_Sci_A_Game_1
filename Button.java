@@ -11,6 +11,7 @@ public class Button extends Actor
     private int x, y, w, h;
     private String text;
     
+    //TODO remove x and y requirements
     public Button(int x, int y, int w, int h, String text) {
         this.x = x;
         this.y = y;

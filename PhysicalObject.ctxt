@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=PhysicalObject
+comment0.text=\n\ Write\ a\ description\ of\ class\ PhysicalObject\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=w\ h\ vx\ vy
+comment1.target=PhysicalObject(int,\ int,\ double,\ double)
+comment2.params=w\ h
+comment2.target=PhysicalObject(int,\ int)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ PhysicalObject\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=4
