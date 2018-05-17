@@ -37,7 +37,7 @@ public class PhysicalObject extends Actor
     public void act() 
     {
         this.vy += Config.GRAVITY; //TODO do collision after this
-        
+
         this.setLocation((int)(this.getX() + this.vx), (int)(this.getY() + this.vy));
         
         // Add your action code here.

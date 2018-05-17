@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu May 17 09:36:05 EDT 2018
+#Thu May 17 09:44:51 EDT 2018
 readme.name=@README
 class.Config.superclass=
 class.PhysicalObject.superclass=greenfoot.Actor
@@ -14,6 +14,7 @@ target2.showInterface=false
 dependency3.from=MyWorld
 target3.y=0
 target3.x=0
+class.Bullet.image=beeper.png
 target1.type=ClassTarget
 class.MyWorld.superclass=greenfoot.World
 target3.type=ClassTarget
@@ -23,6 +24,7 @@ target2.x=0
 dependency3.to=PhysicalObject
 target1.height=50
 dependency2.type=UsesDependency
+class.Bullet.superclass=PhysicalObject
 target4.showInterface=false
 target1.y=0
 target2.height=50
@@ -56,7 +58,7 @@ readme.width=47
 target2.type=ClassTarget
 target3.showInterface=false
 world.lastInstantiated=MyWorld
-class.Helicopter.superclass=greenfoot.Actor
+class.Helicopter.superclass=PhysicalObject
 target4.type=ClassTarget
 dependency1.type=UsesDependency
 version=3.0.0
