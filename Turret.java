@@ -43,9 +43,11 @@ public class Turret extends Actor
             Bullet new_bullet = new Bullet(10, 10, 100, 1000);
             new_bullet.setVelocity(vx, vy);
             
-            this.turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
-            
             this.getWorld().addObject(new_bullet, this.getX(), this.getY());
+        }
+        
+        if(Greenfoot.getMouseInfo() != null) {
+            this.turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }
     }    
     
