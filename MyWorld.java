@@ -23,6 +23,11 @@ public class MyWorld extends World
         PhysicalObject z = new Helicopter(50, 50, "Bob");
         addObject(z, 30, 30);
         
+        for (int i=0; i<20; i++) {
+            LandTile t = new LandTile(100, 100);
+            addObject(t, i * 100 + 50, 750);
+        }
+        
         addObject(x, x.getx(), x.gety());
     }
 }

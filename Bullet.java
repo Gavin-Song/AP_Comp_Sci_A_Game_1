@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 /**
  * Write a description of class Bullet here.
@@ -30,6 +31,15 @@ public class Bullet extends PhysicalObject
         if (this.life <= 0) {
             this.getWorld().removeObject(this);
         }
+        
+        try{
+            List intersect = this.getWorld().getObjectsAt(
+                (int)(this.getX() + this.getvx()),
+                (int)(this.getY() + this.getvy()), null);
+            if (intersect.size() > 0 && intersect.get(0) instanceof Collidable) {
+                this.life = 0;
+            }
+        } catch(IllegalStateException e){} // Why greenfoot call act before adding?!
         
         // Add your action code here.
     }    

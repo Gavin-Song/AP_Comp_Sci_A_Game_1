@@ -21,7 +21,7 @@ public class Config
     public static final double BULLET_MASS = 0;
     
     /* Bullet config */
-    public static final double BASIC_BULLET_SPEED = 10;
+    public static final double BASIC_BULLET_SPEED = 20;
     
     private Config(){}
 }

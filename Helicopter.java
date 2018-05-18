@@ -38,21 +38,22 @@ public class Helicopter extends PhysicalObject
     public void act() {
         super.act();
    
-        if(Greenfoot.isKeyDown("UP")){
+        if (Greenfoot.isKeyDown("UP") || Greenfoot.isKeyDown("W")) {
             this.applyForce(0, -Config.THRUSTER_FORCE_Y);
         }
-        if(Greenfoot.isKeyDown("LEFT")){
+        if (Greenfoot.isKeyDown("DOWN") || Greenfoot.isKeyDown("S")) {
+            this.applyForce(0, Config.THRUSTER_FORCE_Y);
+        }
+        if (Greenfoot.isKeyDown("LEFT") || Greenfoot.isKeyDown("A")) {
             this.applyForce(-Config.THRUSTER_FORCE_X, 0);
         }
-        if(Greenfoot.isKeyDown("RIGHT")){
+        if (Greenfoot.isKeyDown("RIGHT") || Greenfoot.isKeyDown("D")) {
             this.applyForce(Config.THRUSTER_FORCE_X, 0);
-        }
-        if(Greenfoot.isKeyDown("DOWN")){
-            this.applyForce(0, Config.THRUSTER_FORCE_Y);
         }
         
         for (Turret t: turrets) {
             t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
+            t.fire(this.getvx(), this.getvy());
         }
         
         // Add your action code here.

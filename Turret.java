@@ -11,7 +11,7 @@ public class Turret extends Actor
     private int rx, ry; //Relative location to Helicopter
     private String type;
     private int w, h;
-    private boolean on = false;
+    private boolean on = true;
     
     public Turret(int w, int h, int rx, int ry, String type) {
         this.rx = rx;
@@ -30,26 +30,28 @@ public class Turret extends Actor
      */
     public void act() 
     {
+        this.faceTowardsMouse();
+    }    
+    
+    public void fire(double vx, double vy) {
         // Fire bullets at current mouse location if mouse is down
-         if(Greenfoot.getMouseInfo() != null && Greenfoot.isKeyDown("A")){
+        if(Greenfoot.getMouseInfo() != null && this.on){
             // Calculate new bullet velocity
-            double dx = (Greenfoot.getMouseInfo().getX() - this.getX());
-            double dy = (Greenfoot.getMouseInfo().getY() - this.getY());
-            double d = Math.sqrt(dx * dx + dy * dy);
-            
-            double vx = Config.BASIC_BULLET_SPEED / d * dx;
-            double vy = Config.BASIC_BULLET_SPEED / d * dy;
+            vx += Config.BASIC_BULLET_SPEED * Math.cos(Util.degToRad(this.getRotation()));
+            vy += Config.BASIC_BULLET_SPEED * Math.sin(Util.degToRad(this.getRotation()));
             
             Bullet new_bullet = new Bullet(10, 10, 100, 1000);
             new_bullet.setVelocity(vx, vy);
             
             this.getWorld().addObject(new_bullet, this.getX(), this.getY());
         }
-        
+    }
+    
+    public void faceTowardsMouse() {
         if(Greenfoot.getMouseInfo() != null) {
             this.turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
         }
-    }    
+    }
     
     public void toggleOn(boolean n) {
         this.on = n;
