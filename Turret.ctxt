@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Turret
+comment0.text=\n\ Write\ a\ description\ of\ class\ Turret\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=w\ h\ rx\ ry\ type
+comment1.target=Turret(int,\ int,\ int,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Turret\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=n
+comment3.target=void\ toggleOn(boolean)
+comment4.params=
+comment4.target=void\ toggleOn()
+comment5.params=
+comment5.target=int\ getrx()
+comment6.params=
+comment6.target=int\ getry()
+numComments=7

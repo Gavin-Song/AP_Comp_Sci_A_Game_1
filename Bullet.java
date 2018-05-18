@@ -8,8 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bullet extends PhysicalObject
 {
-    public Bullet(int w, int h, double vx, double vy, double life, double damage) {
-        super(w, h, vx, vy);
+    private double damage;
+    private double life;
+    
+    public Bullet(int w, int h, double life, double damage) {
+        super(w, h, Config.BULLET_MASS);
+        this.damage = damage;
+        this.life = life;
     }
     
     
@@ -20,6 +25,12 @@ public class Bullet extends PhysicalObject
     public void act() 
     {
         super.act();
+        
+        this.life--;
+        if (this.life <= 0) {
+            this.getWorld().removeObject(this);
+        }
+        
         // Add your action code here.
     }    
 }
