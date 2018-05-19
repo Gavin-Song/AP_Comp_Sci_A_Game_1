@@ -1,9 +1,10 @@
 #Greenfoot properties
-#Fri May 18 22:19:29 EDT 2018
+#Sat May 19 10:27:48 EDT 2018
 editor.fx.0.height=834
 target2.width=90
 target8.name=PhysicalObject
 dependency12.type=UsesDependency
+class.FireTurret.image=turret3.png
 target1.type=ClassTarget
 target7.showInterface=false
 mainWindow.height=1048
@@ -44,6 +45,7 @@ dependency15.to=LandTile
 target4.typeParameters=
 target5.name=Config
 world.lastInstantiated=MyWorld
+class.FireTurret.superclass=Turret
 mainWindow.width=1938
 readme.width=47
 target9.name=Turret
@@ -66,6 +68,7 @@ class.Turret.superclass=greenfoot.Actor
 version=3.0.0
 editor.fx.0.y=94
 editor.fx.0.x=551
+class.FireBullet.image=fire1.png
 dependency15.from=MyWorld
 dependency6.to=Turret
 target2.showInterface=false
@@ -147,6 +150,7 @@ target6.width=80
 target10.height=50
 target7.width=80
 dependency3.from=Bullet
+class.FireBullet.superclass=Bullet
 target1.typeParameters=
 class.Helicopter.superclass=PhysicalObject
 class.MachineGunTurret.superclass=Turret

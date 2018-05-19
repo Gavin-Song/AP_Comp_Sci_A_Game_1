@@ -19,10 +19,10 @@ public class Helicopter extends PhysicalObject
         this.name = name;
         
         turrets = new ArrayList<Turret>();
-        turrets.add(new MachineGunTurret(30, 20, -50, 5));
-        turrets.add(new MachineGunTurret(30, 20, 50, 5));
-        turrets.add(new MachineGunTurret(30, 20, -20, 5));
-        turrets.add(new MachineGunTurret(30, 20, 20, 5));
+        turrets.add(new MachineGunTurret(30, 20, -70, 5));
+        turrets.add(new MachineGunTurret(30, 20, 70, 5));
+        turrets.add(new MachineGunTurret(30, 20, -30, 5));
+        turrets.add(new FireTurret(50, 30, 20, 5));
     }
     
     public void addedToWorld(World w) {

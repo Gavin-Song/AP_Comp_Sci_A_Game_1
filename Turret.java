@@ -15,6 +15,7 @@ public class Turret extends Actor
     private boolean on = true;
     private double bullet_velocity_randomness = 0.2;
     private double bullet_angle_randomness = 0.01;
+    private double bullet_speed = Config.BASIC_BULLET_SPEED;
     
     public Turret(int w, int h, int rx, int ry, String type) {
         this.rx = rx;
@@ -43,8 +44,8 @@ public class Turret extends Actor
             double vx, vy;
             double fire_angle = this.getRotation() * Util.randomFromOne(this.bullet_angle_randomness); 
            
-            vx = vx_inital + Config.BASIC_BULLET_SPEED * Math.cos(Util.degToRad(fire_angle));
-            vy = vy_inital + Config.BASIC_BULLET_SPEED * Math.sin(Util.degToRad(fire_angle));
+            vx = vx_inital + this.bullet_speed * Math.cos(Util.degToRad(fire_angle));
+            vy = vy_inital + this.bullet_speed * Math.sin(Util.degToRad(fire_angle));
             
             double speed_randomness = Util.randomFromOne(this.bullet_velocity_randomness); 
             vx *= speed_randomness;
@@ -83,5 +84,9 @@ public class Turret extends Actor
     public void setRandomness(double vel, double angle) {
         this.bullet_velocity_randomness = vel;
         this.bullet_angle_randomness = angle;
+    }
+    
+    public void setBulletSpeed(double s) {
+        this.bullet_speed = s;
     }
 }

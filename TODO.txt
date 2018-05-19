@@ -1,6 +1,14 @@
 Bullets have friendly fire
 
 More turret types
+	rocket barrage
+	scanning laser
+	drop bombs
+	emp wave emitter
+	
+	defense turrets:
+		missile defense
+		AA railgun
 
 Scrolling
 

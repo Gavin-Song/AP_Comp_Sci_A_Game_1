@@ -11,10 +11,4 @@ public class LandTile extends Actor implements Collidable
     public LandTile(int w, int h) {
         this.getImage().scale(w, h);
     }
-    
-    /**
-     * Does nothing. This tile simply exists
-     * as a decorational object.
-     */
-    public void act() {}    
 }

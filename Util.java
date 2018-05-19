@@ -19,4 +19,8 @@ public class Util
     public static double randomFromOne(double a) {
         return randomNum(1 - a, 1 + a);
     }
+    
+    public static double randomFromOneGeometric(double a) {
+        return randomNum(1 * a, 1 / a);
+    }
 }

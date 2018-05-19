@@ -10,5 +10,6 @@ public class MachineGunTurret extends Turret
 {
     public MachineGunTurret(int w, int h, int rx, int ry) {
         super(w, h, rx, ry, "machine_gun");
+        this.setRandomness(0.2, 0.01);
     }
 }

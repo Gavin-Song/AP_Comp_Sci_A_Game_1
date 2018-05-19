@@ -9,4 +9,6 @@ comment3.params=a\ b
 comment3.target=double\ randomNum(double,\ double)
 comment4.params=a
 comment4.target=double\ randomFromOne(double)
-numComments=5
+comment5.params=a
+comment5.target=double\ randomFromOneGeometric(double)
+numComments=6

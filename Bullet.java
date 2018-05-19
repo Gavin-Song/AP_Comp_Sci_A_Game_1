@@ -43,4 +43,12 @@ public class Bullet extends PhysicalObject
         
         // Add your action code here.
     }    
+    
+    public double getlife() {
+        return this.life;
+    }
+    
+    public double getdamage() {
+        return this.damage;
+    }
 }

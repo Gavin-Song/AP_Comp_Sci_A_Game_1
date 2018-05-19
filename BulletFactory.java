@@ -9,8 +9,10 @@ public class BulletFactory
     private BulletFactory() {}
 
     public static Bullet getBullet(String type) {
-        if (type.equals("machine_gun")) {
+        if ("machine_gun".equals(type)) {
             return new MachineGunBullet();
+        } else if ("fire_gun".equals(type)) {
+            return new FireBullet();
         }
         return null;
     }

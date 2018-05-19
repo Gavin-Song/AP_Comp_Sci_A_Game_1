@@ -114,6 +114,17 @@ public class PhysicalObject extends Actor
     public int geth() {
         return h;
     }
+    
+    /**
+     * Set a new size
+     * @param w New width
+     * @param h New height
+     */
+    public void setsize(int w, int h) {
+        this.w = w;
+        this.h = h;
+        this.getImage().scale(w, h);
+    }
 
     /**
      * Return x velocity
