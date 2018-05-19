@@ -11,7 +11,10 @@ public class Turret extends Actor
     private int rx, ry; //Relative location to Helicopter
     private String type;
     private int w, h;
+    
     private boolean on = true;
+    private double bullet_velocity_randomness = 0.2;
+    private double bullet_angle_randomness = 0.01;
     
     public Turret(int w, int h, int rx, int ry, String type) {
         this.rx = rx;
@@ -33,14 +36,22 @@ public class Turret extends Actor
         this.faceTowardsMouse();
     }    
     
-    public void fire(double vx, double vy) {
+    public void fire(double vx_inital, double vy_inital) {
         // Fire bullets at current mouse location if mouse is down
         if(Greenfoot.getMouseInfo() != null && this.on){
             // Calculate new bullet velocity
-            vx += Config.BASIC_BULLET_SPEED * Math.cos(Util.degToRad(this.getRotation()));
-            vy += Config.BASIC_BULLET_SPEED * Math.sin(Util.degToRad(this.getRotation()));
+            double vx, vy;
+            double fire_angle = this.getRotation() * Util.randomFromOne(this.bullet_angle_randomness); 
+           
+            vx = vx_inital + Config.BASIC_BULLET_SPEED * Math.cos(Util.degToRad(fire_angle));
+            vy = vy_inital + Config.BASIC_BULLET_SPEED * Math.sin(Util.degToRad(fire_angle));
             
-            Bullet new_bullet = new Bullet(10, 10, 100, 1000);
+            double speed_randomness = Util.randomFromOne(this.bullet_velocity_randomness); 
+            vx *= speed_randomness;
+            vy *= speed_randomness;
+            
+            Bullet new_bullet = BulletFactory.getBullet(this.type);
+            new_bullet.setRotation(this.getRotation());
             new_bullet.setVelocity(vx, vy);
             
             this.getWorld().addObject(new_bullet, this.getX(), this.getY());
@@ -67,5 +78,10 @@ public class Turret extends Actor
     
     public int getry() {
         return ry;
+    }
+    
+    public void setRandomness(double vel, double angle) {
+        this.bullet_velocity_randomness = vel;
+        this.bullet_angle_randomness = angle;
     }
 }

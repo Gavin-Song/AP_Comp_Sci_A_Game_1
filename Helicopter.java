@@ -19,10 +19,10 @@ public class Helicopter extends PhysicalObject
         this.name = name;
         
         turrets = new ArrayList<Turret>();
-        turrets.add(new Turret(30, 30, -50, 5, "basic"));
-        turrets.add(new Turret(30, 30, 50, 5, "basic"));
-        turrets.add(new Turret(30, 30, -20, 5, "basic"));
-        turrets.add(new Turret(30, 30, 20, 5, "basic"));
+        turrets.add(new MachineGunTurret(30, 20, -50, 5));
+        turrets.add(new MachineGunTurret(30, 20, 50, 5));
+        turrets.add(new MachineGunTurret(30, 20, -20, 5));
+        turrets.add(new MachineGunTurret(30, 20, 20, 5));
     }
     
     public void addedToWorld(World w) {
@@ -49,6 +49,11 @@ public class Helicopter extends PhysicalObject
         }
         if (Greenfoot.isKeyDown("RIGHT") || Greenfoot.isKeyDown("D")) {
             this.applyForce(Config.THRUSTER_FORCE_X, 0);
+        }
+        
+        /* Stop before it hits the ground */
+        if (this.getY() > Config.GROUND_Y) {
+            this.setLocation(this.getX(), Config.GROUND_Y);
         }
         
         for (Turret t: turrets) {

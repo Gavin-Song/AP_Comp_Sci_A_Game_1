@@ -9,6 +9,7 @@ public class Config
     public static final double UP_ACCEL = 2.3;
     public static final double FRICTION = 0.002;
     public static final double MIN_VEL = 1;
+    public static final int GROUND_Y = 650;
 
     /* Thruster forces on the Helicopter (Controls)
      *      THRUSTER_FORCE_X is force applied in x direction
