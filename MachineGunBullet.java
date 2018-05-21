@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MachineGunBullet extends Bullet
 {
-    public MachineGunBullet() {
-        super(10, 1, 100, 1); // width, height, life, damage
+    public MachineGunBullet(String team) {
+        super(10, 1, 100, 1, team); // width, height, life, damage
     }
 }

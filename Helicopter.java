@@ -7,10 +7,11 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Helicopter extends PhysicalObject
+public class Helicopter extends PhysicalObject implements CombatUnit
 {
     private String name;
     private ArrayList<Turret> turrets;
+    private int life = Config.HELICOPTER_LIFE;
     
     public Helicopter(int w, int h, String name) {
         super(w, h, Config.HELICOPTER_MASS);
@@ -19,16 +20,20 @@ public class Helicopter extends PhysicalObject
         this.name = name;
         
         turrets = new ArrayList<Turret>();
-        turrets.add(new MachineGunTurret(30, 20, -70, 5));
-        turrets.add(new MachineGunTurret(30, 20, 70, 5));
-        turrets.add(new MachineGunTurret(30, 20, -30, 5));
-        turrets.add(new FireTurret(50, 30, 20, 5));
+        turrets.add(new MachineGunTurret(30, 20, -70, 5, "human"));
+        turrets.add(new MachineGunTurret(30, 20, 70, 5, "human"));
+        turrets.add(new MachineGunTurret(30, 20, -30, 5, "human"));
+        turrets.add(new FireTurret(50, 30, 20, 5, "human"));
     }
     
     public void addedToWorld(World w) {
         for (Turret t: turrets) {
             w.addObject(t, this.getX() + t.getrx(), this.getY() + t.getry());
         }
+    }
+    
+    public void subtractHealth(int damage) {
+        this.life -= damage;
     }
     
     /**
@@ -63,4 +68,8 @@ public class Helicopter extends PhysicalObject
         
         // Add your action code here.
     }    
+    
+    public String getTeam() {
+        return "human";
+    }
 }

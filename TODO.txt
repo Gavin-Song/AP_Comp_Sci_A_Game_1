@@ -1,5 +1,3 @@
-Bullets have friendly fire
-
 More turret types
 	rocket barrage
 	scanning laser
@@ -10,6 +8,8 @@ More turret types
 		missile defense
 		AA railgun
 		shield dome
+Bullet also checks collision with image
+
 
 Scrolling
 

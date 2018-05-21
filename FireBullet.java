@@ -11,8 +11,8 @@ public class FireBullet extends Bullet
     private static double SIZE_MULTIPLIER = 1.1; //1.0413927; // How much bigger the flames get per frame
     private static int BASE_LIFE = 40;
     
-    public FireBullet() {
-        super(10, 10, FireBullet.BASE_LIFE, 10); // width, height, life, damage
+    public FireBullet(String team) {
+        super(10, 10, FireBullet.BASE_LIFE, 10, team); // width, height, life, damage
         this.getImage().setTransparency(100);
     }
     

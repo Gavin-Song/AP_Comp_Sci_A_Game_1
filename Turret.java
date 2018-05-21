@@ -10,6 +10,7 @@ public abstract class Turret extends Actor
 {
     private int rx, ry; //Relative location to Helicopter
     private String type;
+    private String team;
     private int w, h;
     
     private boolean on = true;
@@ -17,12 +18,15 @@ public abstract class Turret extends Actor
     private double bullet_angle_randomness = 0.01;
     private double bullet_speed = Config.BASIC_BULLET_SPEED;
     
-    public Turret(int w, int h, int rx, int ry, String type) {
+    public Turret(int w, int h, int rx, int ry, String type, String team) {
         this.rx = rx;
         this.ry = ry;
+        
         this.w = w;
         this.h = h;
+        
         this.type = type;
+        this.team = team;
         
         this.getImage().scale(w, h);
     }
@@ -51,7 +55,7 @@ public abstract class Turret extends Actor
             vx *= speed_randomness;
             vy *= speed_randomness;
             
-            Bullet new_bullet = BulletFactory.getBullet(this.type);
+            Bullet new_bullet = BulletFactory.getBullet(this.type, this.team);
             new_bullet.setRotation(this.getRotation());
             new_bullet.setVelocity(vx, vy);
             

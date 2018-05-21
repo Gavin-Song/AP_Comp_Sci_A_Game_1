@@ -8,11 +8,11 @@ public class BulletFactory
 {
     private BulletFactory() {}
 
-    public static Bullet getBullet(String type) {
+    public static Bullet getBullet(String type, String team) {
         if ("machine_gun".equals(type)) {
-            return new MachineGunBullet();
+            return new MachineGunBullet(team);
         } else if ("fire_gun".equals(type)) {
-            return new FireBullet();
+            return new FireBullet(team);
         }
         return null;
     }

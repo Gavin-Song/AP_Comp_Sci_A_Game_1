@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=CombatUnit
+comment1.params=
+comment1.target=java.lang.String\ getTeam()
+comment2.params=damage
+comment2.target=void\ subtractHealth(int)
+numComments=3

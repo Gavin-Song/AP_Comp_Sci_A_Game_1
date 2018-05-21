@@ -9,13 +9,18 @@ import java.util.*;
  */
 public abstract class Bullet extends PhysicalObject
 {
-    private double damage;
+    private int damage;
     private double life;
+    private String team;
     
-    public Bullet(int w, int h, double life, double damage) {
+    public Bullet(int w, int h, double life, int damage, String team) {
         super(w, h, Config.BULLET_MASS);
         this.damage = damage;
         this.life = life;
+        this.team = team;
+        
+        this.setGravity(false);
+        this.setFriction(false);
     }
     
     
@@ -32,14 +37,28 @@ public abstract class Bullet extends PhysicalObject
             this.getWorld().removeObject(this);
         }
         
-        try{
+        try {
             List intersect = this.getWorld().getObjectsAt(
                 (int)(this.getX() + this.getvx()),
                 (int)(this.getY() + this.getvy()), null);
-            if (intersect.size() > 0 && intersect.get(0) instanceof Collidable) {
-                this.life = 0;
+            if (intersect.size() > 0) {
+                if (intersect.get(0) instanceof Collidable) {
+                    // Collidable terrain object
+                    this.life = 0;
+                }
+                else if (intersect.get(0) instanceof CombatUnit) {
+                    CombatUnit collided = (CombatUnit)intersect.get(0);
+                    if ("human".equals( (collided).getTeam() ) && "wombat".equals(this.team)) {
+                        this.life = 0;
+                        collided.subtractHealth(this.damage);
+                    }
+                    else if ("wombat".equals( (collided).getTeam() ) && "human".equals(this.team)) {
+                        this.life = 0;
+                        collided.subtractHealth(this.damage);
+                    }
+                }
             }
-        } catch(IllegalStateException e){} // Why greenfoot call act before adding?!
+        } catch(IllegalStateException e) {} // Why greenfoot call act before adding?!
     }    
     
     public double getlife() {

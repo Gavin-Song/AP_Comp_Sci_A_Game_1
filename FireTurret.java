@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FireTurret extends Turret
 {
-    public FireTurret(int w, int h, int rx, int ry) {
-        super(w, h, rx, ry, "fire_gun");
+    public FireTurret(int w, int h, int rx, int ry, String team) {
+        super(w, h, rx, ry, "fire_gun", team);
         this.setRandomness(0.9, 0.03);
         this.setBulletSpeed(Config.BASIC_BULLET_SPEED * 0.2);
     }
