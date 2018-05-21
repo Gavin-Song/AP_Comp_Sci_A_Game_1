@@ -9,6 +9,7 @@ More turret types
 	defense turrets:
 		missile defense
 		AA railgun
+		shield dome
 
 Scrolling
 

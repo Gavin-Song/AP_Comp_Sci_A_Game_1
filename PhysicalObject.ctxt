@@ -25,6 +25,9 @@ comment15.text=\r\n\ Set\ new\ vy\r\n\ @param\ vy\r\n
 comment16.params=t
 comment16.target=void\ setGravity(boolean)
 comment16.text=\r\n\ Set\ should\ it\ be\ affected\ by\ gravity?\r\n\ @param\ t\ true\ \=\ yes,\ false\ \=\ no\r\n
+comment17.params=m
+comment17.target=void\ setMass(double)
+comment17.text=\r\n\ Set\ a\ new\ mass\ for\ the\ object\r\n\ @param\ m\ New\ mass\ (double)\r\n
 comment2.params=w\ h\ mass
 comment2.target=PhysicalObject(int,\ int,\ double)
 comment2.text=\r\n\ Create\ a\ Physical\ Object\r\n\ @param\ w\ Width\ (int)\r\n\ @param\ h\ Height\ (int)\r\n\ @param\ mass\ Mass\ of\ object\ (double)\r\n
@@ -49,4 +52,4 @@ comment8.text=\r\n\ Return\ the\ width\r\n\ @return\ width\r\n
 comment9.params=
 comment9.target=int\ geth()
 comment9.text=\r\n\ Return\ the\ height\r\n\ @return\ height\r\n
-numComments=17
+numComments=18

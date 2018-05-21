@@ -7,7 +7,7 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends PhysicalObject
+public abstract class Bullet extends PhysicalObject
 {
     private double damage;
     private double life;
@@ -40,8 +40,6 @@ public class Bullet extends PhysicalObject
                 this.life = 0;
             }
         } catch(IllegalStateException e){} // Why greenfoot call act before adding?!
-        
-        // Add your action code here.
     }    
     
     public double getlife() {

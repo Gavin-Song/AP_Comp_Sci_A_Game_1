@@ -175,4 +175,12 @@ public class PhysicalObject extends Actor
     public void setGravity(boolean t) {
         this.doGravity = t;
     }
+    
+    /**
+     * Set a new mass for the object
+     * @param m New mass (double)
+     */
+    public void setMass(double m) {
+        this.mass = m;
+    }
 }
