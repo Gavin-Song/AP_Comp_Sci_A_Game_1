@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Config
-comment0.text=\n\ Class\ only\ holds\ config\ information\n\ for\ the\ game.\ Cannot\ be\ created.\ All\ variables\n\ must\ be\ public\ static\ final\n
+comment0.text=\r\n\ Class\ only\ holds\ config\ information\r\n\ for\ the\ game.\ Cannot\ be\ created.\ All\ variables\r\n\ must\ be\ public\ static\ final\r\n
 comment1.params=
 comment1.target=Config()
 numComments=2

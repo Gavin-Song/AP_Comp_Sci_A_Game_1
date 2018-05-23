@@ -32,7 +32,7 @@ public class MyWorld extends World
         
         for(int i=0;i<10;i++){
             WombatLandUnit lab = new SupplyTruck();
-            addObject(lab, 1200 + i * 50, 500);
+            addObject(lab, 1200 + i * 100, 500);
         }
     }
 }

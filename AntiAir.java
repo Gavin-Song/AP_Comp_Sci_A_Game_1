@@ -1,15 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class LAB here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class LAB extends WombatLandUnit
+public class AntiAir extends WombatLandUnit
 {
-    public LAB(){
-        super(40, 40, 10, "WLB-X", "Light Assault Wombot"); // width, height, health, name, desc
+    public AntiAir(){
+        super(80, 40, 30, "Honeyeater", "Light Mobile Anti-air Cannon"); // width, height, health, name, desc
         this.setFriction(false);
     }
     
@@ -19,7 +13,7 @@ public class LAB extends WombatLandUnit
     
     public void act() 
     {
-        this.setvx(-5);
+        this.setvx(-2.5);
         super.act();
     }    
 }
