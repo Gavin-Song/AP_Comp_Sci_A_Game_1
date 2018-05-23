@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed May 23 17:11:52 EDT 2018
+#Wed May 23 17:18:58 EDT 2018
 target16.name=Bullet
 class.MyWorld.image=space1.jpg
 dependency35.to=Config
@@ -214,6 +214,7 @@ target20.typeParameters=
 class.Tank.superclass=WombatLandUnit
 dependency5.type=UsesDependency
 dependency2.from=WombatLandUnit
+class.HeavyTank.superclass=WombatLandUnit
 dependency45.type=UsesDependency
 dependency42.from=Turret
 target17.width=90

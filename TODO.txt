@@ -27,7 +27,10 @@ Wombat vechicles
 		bullets do more damage
 	
 	T3 Heavy tank 
+		heavy tank turret, do more damage
+	
 	Magnetic plasma truck
+		sucks units closer
 	
 	Cloak field generator
 	Plane
