@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
+    public static PhysicalObject helicopter;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,8 +22,8 @@ public class MyWorld extends World
         
         Button x = new Button(100, 100, 300, 80, "button");
         
-        PhysicalObject z = new Helicopter(50, 50, "Bob");
-        addObject(z, 30, 30);
+        helicopter = new Helicopter(50, 50, "Bob");
+        addObject(helicopter, 30, 30);
         
         for (int i=0; i<20; i++) {
             LandTile t = new LandTile(100, 100);
@@ -31,7 +33,7 @@ public class MyWorld extends World
         addObject(x, x.getx(), x.gety());
         
         for(int i=0;i<10;i++){
-            WombatLandUnit lab = new SupplyTruck();
+            WombatLandUnit lab = new Tank();
             addObject(lab, 1200 + i * 100, 500);
         }
     }

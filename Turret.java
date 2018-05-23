@@ -16,7 +16,11 @@ public abstract class Turret extends Actor
     private boolean on = true;
     private double bullet_velocity_randomness = 0.2;
     private double bullet_angle_randomness = 0.01;
-    private double bullet_speed = Config.BASIC_BULLET_SPEED;
+    private double muzzle_velocity = Config.BASIC_BULLET_SPEED;
+    
+    private int fire_rate = 0;
+    private int fire_count = 0; // Keep track of fire rate
+    private int[] limit_angle_rotation = {0, 360};
     
     public Turret(int w, int h, int rx, int ry, String type, String team) {
         this.rx = rx;
@@ -38,18 +42,24 @@ public abstract class Turret extends Actor
      */
     public void act() 
     {
-        this.faceTowardsMouse();
     }    
     
     public void fire(double vx_inital, double vy_inital) {
-        // Fire bullets at current mouse location if mouse is down
+        // Delay firing
+        if (this.fire_count != 0 && this.fire_rate != 0) {
+            this.fire_count = (this.fire_count + 1) % this.fire_rate;
+            return;
+        }
+        
+        // Fire bullets at current target if it's on
         if(Greenfoot.getMouseInfo() != null && this.on){
+
             // Calculate new bullet velocity
             double vx, vy;
             double fire_angle = this.getRotation() * Util.randomFromOne(this.bullet_angle_randomness); 
            
-            vx = vx_inital + this.bullet_speed * Math.cos(Util.degToRad(fire_angle));
-            vy = vy_inital + this.bullet_speed * Math.sin(Util.degToRad(fire_angle));
+            vx = vx_inital + this.muzzle_velocity * Math.cos(Util.degToRad(fire_angle));
+            vy = vy_inital + this.muzzle_velocity * Math.sin(Util.degToRad(fire_angle));
             
             double speed_randomness = Util.randomFromOne(this.bullet_velocity_randomness); 
             vx *= speed_randomness;
@@ -60,12 +70,16 @@ public abstract class Turret extends Actor
             new_bullet.setVelocity(vx, vy);
             
             this.getWorld().addObject(new_bullet, this.getX(), this.getY());
+            this.fire_count++;
         }
     }
     
-    public void faceTowardsMouse() {
-        if(Greenfoot.getMouseInfo() != null) {
-            this.turnTowards(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+    public void target(int x, int y) {
+        this.turnTowards(x, y);
+        if (this.getRotation() > this.limit_angle_rotation[1]) {
+            this.setRotation(this.limit_angle_rotation[1]);
+        } else if (this.getRotation() < this.limit_angle_rotation[0]) {
+            this.setRotation(this.limit_angle_rotation[0]);
         }
     }
     
@@ -85,12 +99,21 @@ public abstract class Turret extends Actor
         return ry;
     }
     
+    public void setFireRate(int x) {
+        this.fire_rate = x;
+    }
+    
+    public void setRotationLimit(int start, int end) {
+        this.limit_angle_rotation[0] = start;
+        this.limit_angle_rotation[1] = end;
+    }
+    
     public void setRandomness(double vel, double angle) {
         this.bullet_velocity_randomness = vel;
         this.bullet_angle_randomness = angle;
     }
     
     public void setBulletSpeed(double s) {
-        this.bullet_speed = s;
+        this.muzzle_velocity = s;
     }
 }

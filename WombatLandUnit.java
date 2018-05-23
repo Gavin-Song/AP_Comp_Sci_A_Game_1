@@ -45,6 +45,9 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         super.act();
         
         for (Turret t: turrets) {
+            if (MyWorld.helicopter != null) {
+                t.target(MyWorld.helicopter.getX(), MyWorld.helicopter.getY());
+            }
             t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
             t.fire(this.getvx(), this.getvy());
         }

@@ -62,6 +62,9 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         }
         
         for (Turret t: turrets) {
+            if(Greenfoot.getMouseInfo() != null) {
+                t.target(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            }
             t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
             t.fire(this.getvx(), this.getvy());
         }
