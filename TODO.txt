@@ -15,6 +15,25 @@ Scrolling
 
 
 Wombat vechicles
+	T2 missile launcher
+	T2 shield dome generator
+	T2 Turtle tank
+	T2 Laser weapon
+	
+	T3 Parasite - low constant laser weapon
+	
+	T2 AA
+	T3 Rapid fire AA
+	T3 Heavy tank 
+	Magnetic plasma truck
+	
+	Cloak field generator
+	Plane
+	Guided missile
+	
+	Experimental megabot
+	Wombat Tank (EXP)
+	Experimental land carrier
 
 Background
 

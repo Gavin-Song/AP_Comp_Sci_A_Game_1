@@ -20,6 +20,7 @@ public abstract class Bullet extends PhysicalObject
         this.team = team;
         
         this.setGravity(false);
+        this.setDoGroundCollision(false);
         this.setFriction(false);
     }
     
@@ -42,7 +43,8 @@ public abstract class Bullet extends PhysicalObject
                 (int)(this.getX() + this.getvx()),
                 (int)(this.getY() + this.getvy()), null);
             if (intersect.size() > 0) {
-                if (intersect.get(0) instanceof Collidable) {
+                if (intersect.get(0) instanceof Collidable || 
+                    this.getY() + this.getvy() >= Config.GROUND_Y - this.geth() / 2) {
                     // Collidable terrain object
                     this.life = 0;
                 }
@@ -67,5 +69,9 @@ public abstract class Bullet extends PhysicalObject
     
     public double getdamage() {
         return this.damage;
+    }
+    
+    public String getTeam() {
+        return this.team;
     }
 }

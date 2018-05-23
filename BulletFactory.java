@@ -13,6 +13,8 @@ public class BulletFactory
             return new MachineGunBullet(team);
         } else if ("fire_gun".equals(type)) {
             return new FireBullet(team);
+        } else if ("missile_gun".equals(type)) {
+            return new GuidedMissile(team);
         }
         return null;
     }

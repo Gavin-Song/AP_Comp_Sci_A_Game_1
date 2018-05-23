@@ -33,7 +33,7 @@ public class MyWorld extends World
         addObject(x, x.getx(), x.gety());
         
         for(int i=0;i<10;i++){
-            WombatLandUnit lab = new AntiAir();
+            WombatLandUnit lab = new Tank();
             addObject(lab, 1200 + i * 100, 500);
         }
     }

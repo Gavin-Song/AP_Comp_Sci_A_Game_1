@@ -11,8 +11,10 @@ public class PhysicalObject extends Actor
     private double mass;
     private boolean isStatic;
     private int w, h;
-    private boolean doGravity = true;;
+    
+    private boolean doGravity = true;
     private boolean doFriction = true;
+    private boolean doGroundCollision = true;
 
     private double vx = 0.0;
     private double vy = 0.0;
@@ -56,7 +58,7 @@ public class PhysicalObject extends Actor
             if (this.doGravity && this.getY() + this.vy < Config.GROUND_Y - this.h / 2) {
                 this.vy += Config.GRAVITY;
             } 
-            else if (this.getY() + this.vy >= Config.GROUND_Y - this.h / 2) {
+            else if (this.getY() + this.vy >= Config.GROUND_Y - this.h / 2 && this.doGroundCollision) {
                 // Handle ground collision
                 this.setLocation(this.getX(), Config.GROUND_Y - this.h / 2);
                 this.vy = 0;
@@ -198,5 +200,13 @@ public class PhysicalObject extends Actor
      */
     public void setFriction(boolean t) {
         this.doFriction = t;
+    }
+    
+    /**
+     * Should it do ground collision?
+     * @param t true = yes, false = no
+     */
+    public void setDoGroundCollision(boolean t) {
+        this.doGroundCollision = t;
     }
 }

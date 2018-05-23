@@ -31,6 +31,9 @@ comment17.text=\r\n\ Set\ a\ new\ mass\ for\ the\ object\r\n\ @param\ m\ New\ ma
 comment18.params=t
 comment18.target=void\ setFriction(boolean)
 comment18.text=\r\n\ Set\ should\ it\ do\ friction?\r\n\ @param\ t\ true\ \=\ yes,\ false\ \=\ no\r\n
+comment19.params=t
+comment19.target=void\ setDoGroundCollision(boolean)
+comment19.text=\r\n\ Should\ it\ do\ ground\ collision?\r\n\ @param\ t\ true\ \=\ yes,\ false\ \=\ no\r\n
 comment2.params=w\ h\ mass
 comment2.target=PhysicalObject(int,\ int,\ double)
 comment2.text=\r\n\ Create\ a\ Physical\ Object\r\n\ @param\ w\ Width\ (int)\r\n\ @param\ h\ Height\ (int)\r\n\ @param\ mass\ Mass\ of\ object\ (double)\r\n
@@ -55,4 +58,4 @@ comment8.text=\r\n\ Return\ the\ width\r\n\ @return\ width\r\n
 comment9.params=
 comment9.target=int\ geth()
 comment9.text=\r\n\ Return\ the\ height\r\n\ @return\ height\r\n
-numComments=19
+numComments=20

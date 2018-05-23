@@ -45,8 +45,12 @@ public abstract class Turret extends Actor
     }    
     
     public void fire(double vx_inital, double vy_inital) {
+        this.fire(vx_inital, vy_inital, false);
+    }
+    
+    public void fire(double vx_inital, double vy_inital, boolean ignore_delay) {
         // Delay firing
-        if (this.fire_count != 0 && this.fire_rate != 0) {
+        if (this.fire_count != 0 && this.fire_rate != 0 && !ignore_delay) {
             this.fire_count = (this.fire_count + 1) % this.fire_rate;
             return;
         }
@@ -72,6 +76,18 @@ public abstract class Turret extends Actor
             this.getWorld().addObject(new_bullet, this.getX(), this.getY());
             this.fire_count++;
         }
+    }
+    
+    public void resetFireDelay() {
+        this.fire_count = 0;
+    }
+    
+    public void setFireDelay(int t) {
+        this.fire_count = t;
+    }
+    
+    public int getFireDelay() {
+        return this.fire_count;
     }
     
     public void target(int x, int y) {
