@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed May 23 16:51:00 EDT 2018
+#Wed May 23 17:11:52 EDT 2018
 target16.name=Bullet
 class.MyWorld.image=space1.jpg
 dependency35.to=Config
@@ -68,6 +68,7 @@ dependency10.type=UsesDependency
 dependency17.type=UsesDependency
 dependency14.from=AntiAir
 package.numTargets=25
+class.T3AntiAir.superclass=WombatLandUnit
 target13.type=ClassTarget
 dependency24.type=UsesDependency
 dependency21.from=MyWorld
@@ -307,6 +308,7 @@ target24.x=0
 target9.type=ClassTarget
 dependency19.to=LandTile
 target4.height=50
+class.RapidFireAntiAirTurret.superclass=MachineGunTurret
 target23.type=AbstractTarget
 target20.y=0
 dependency31.from=Helicopter
@@ -361,6 +363,7 @@ target11.height=50
 target1.type=InterfaceTarget
 dependency24.to=AntiAir
 target9.width=120
+class.MobileMissileLauncher.superclass=WombatLandUnit
 target8.type=ClassTarget
 target23.width=80
 dependency1.to=Config

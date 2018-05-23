@@ -15,7 +15,6 @@ Scrolling
 
 
 Wombat vechicles
-	T2 missile launcher
 	T2 shield dome generator
 	T2 Turtle tank
 	T2 Laser weapon
@@ -23,7 +22,10 @@ Wombat vechicles
 	T3 Parasite - low constant laser weapon
 	
 	T2 AA
-	T3 Rapid fire AA
+	
+	T3 AA 
+		bullets do more damage
+	
 	T3 Heavy tank 
 	Magnetic plasma truck
 	

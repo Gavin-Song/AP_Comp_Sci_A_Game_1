@@ -45,35 +45,37 @@ public abstract class Turret extends Actor
     }    
     
     public void fire(double vx_inital, double vy_inital) {
-        this.fire(vx_inital, vy_inital, false);
+        this.fire(vx_inital, vy_inital, 1);
     }
     
-    public void fire(double vx_inital, double vy_inital, boolean ignore_delay) {
+    public void fire(double vx_inital, double vy_inital, int bullets_per_round) {
         // Delay firing
-        if (this.fire_count != 0 && this.fire_rate != 0 && !ignore_delay) {
+        if (this.fire_count != 0 && this.fire_rate != 0) {
             this.fire_count = (this.fire_count + 1) % this.fire_rate;
             return;
         }
         
         // Fire bullets at current target if it's on
         if(Greenfoot.getMouseInfo() != null && this.on){
-
-            // Calculate new bullet velocity
-            double vx, vy;
-            double fire_angle = this.getRotation() * Util.randomFromOne(this.bullet_angle_randomness); 
-           
-            vx = vx_inital + this.muzzle_velocity * Math.cos(Util.degToRad(fire_angle));
-            vy = vy_inital + this.muzzle_velocity * Math.sin(Util.degToRad(fire_angle));
-            
-            double speed_randomness = Util.randomFromOne(this.bullet_velocity_randomness); 
-            vx *= speed_randomness;
-            vy *= speed_randomness;
-            
-            Bullet new_bullet = BulletFactory.getBullet(this.type, this.team);
-            new_bullet.setRotation(this.getRotation());
-            new_bullet.setVelocity(vx, vy);
-            
-            this.getWorld().addObject(new_bullet, this.getX(), this.getY());
+            for (int i=0; i < bullets_per_round; i++) {
+                // Calculate new bullet velocity
+                double vx, vy;
+                double fire_angle = this.getRotation() * Util.randomFromOne(this.bullet_angle_randomness); 
+                fire_angle += i * 0.1;
+               
+                vx = vx_inital + this.muzzle_velocity * Math.cos(Util.degToRad(fire_angle));
+                vy = vy_inital + this.muzzle_velocity * Math.sin(Util.degToRad(fire_angle));
+                
+                double speed_randomness = Util.randomFromOne(this.bullet_velocity_randomness); 
+                vx *= speed_randomness;
+                vy *= speed_randomness;
+                
+                Bullet new_bullet = BulletFactory.getBullet(this.type, this.team);
+                new_bullet.setRotation(this.getRotation());
+                new_bullet.setVelocity(vx, vy);
+                
+                this.getWorld().addObject(new_bullet, this.getX(), this.getY());
+            }
             this.fire_count++;
         }
     }

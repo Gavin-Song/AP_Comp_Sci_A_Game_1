@@ -12,6 +12,6 @@ public class GuidedMissileTurret extends Turret
         super(w, h, rx, ry, "missile_gun", team);
         this.setRandomness(0.0, 0.0);
         this.setBulletSpeed(Config.BASIC_BULLET_SPEED * 0.4);
-        this.setFireRate(80);
+        this.setFireRate(220);
     }
 }
