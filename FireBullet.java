@@ -12,7 +12,11 @@ public class FireBullet extends Bullet
     private static int BASE_LIFE = 40;
     
     public FireBullet(String team) {
-        super(10, 10, FireBullet.BASE_LIFE, 10, team); // width, height, life, damage
+        this(team, 20);
+    }
+    
+    public FireBullet(String team, int damage) {
+        super(10, 10, FireBullet.BASE_LIFE, damage, team); // width, height, life, damage
         this.getImage().setTransparency(100);
     }
     

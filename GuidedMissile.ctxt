@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=GuidedMissile
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ GuidedMissile\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=team
-comment1.target=GuidedMissile(java.lang.String)
-comment2.params=
-comment2.target=void\ act()
+comment1.params=team\ damage
+comment1.target=GuidedMissile(java.lang.String,\ int)
+comment2.params=team
+comment2.target=GuidedMissile(java.lang.String)
 comment3.params=
-comment3.target=void\ obtainNearestEnemy()
-numComments=4
+comment3.target=void\ act()
+comment4.params=
+comment4.target=void\ obtainNearestEnemy()
+numComments=5

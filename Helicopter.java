@@ -20,8 +20,8 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         this.name = name;
         
         turrets = new ArrayList<Turret>();
-        turrets.add(new GuidedMissileTurret(30, 20, -70, 5, "human"));
-        //turrets.add(new MachineGunTurret(30, 20, 70, 5, "human"));
+        //turrets.add(new GuidedMissileTurret(30, 20, -70, 5, "human"));
+        turrets.add(new MachineGunTurret(30, 20, 70, 5, "human"));
         //turrets.add(new MachineGunTurret(30, 20, -30, 5, "human"));
         //turrets.add(new FireTurret(50, 30, 20, 5, "human"));
     }

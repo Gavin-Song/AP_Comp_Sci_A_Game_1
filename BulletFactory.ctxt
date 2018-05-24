@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=BulletFactory()
 comment2.params=type\ team
 comment2.target=Bullet\ getBullet(java.lang.String,\ java.lang.String)
-numComments=3
+comment3.params=type\ team\ damage
+comment3.target=Bullet\ getBullet(java.lang.String,\ java.lang.String,\ int)
+numComments=4

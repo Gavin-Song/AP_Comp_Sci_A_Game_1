@@ -14,6 +14,8 @@ Bullet also checks collision with image
 Scrolling
 
 
+Ajust sizes
+
 Wombat vechicles
 	T2 shield dome generator
 	T2 Turtle tank
@@ -23,11 +25,6 @@ Wombat vechicles
 	
 	T2 AA
 	
-	T3 AA 
-		bullets do more damage
-	
-	T3 Heavy tank 
-		heavy tank turret, do more damage
 	
 	Magnetic plasma truck
 		sucks units closer

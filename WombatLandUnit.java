@@ -10,6 +10,8 @@ import java.util.*;
 public abstract class WombatLandUnit extends PhysicalObject implements CombatUnit
 {
     private double life;
+    private double total_life;
+    
     private ArrayList<Turret> turrets;
     private String name;
     private String desc;
@@ -17,6 +19,8 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
     public WombatLandUnit(int w, int h, double life, String name, String desc) {
         super(w, h, 10);
         this.life = life;
+        this.total_life = life;
+        
         this.name = name;
         this.desc = desc;
         
@@ -40,9 +44,28 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         this.life -= damage;
     }
     
+    public void drawHealthBar() {
+        GreenfootImage img = this.getImage();
+        img.setColor(Color.LIGHT_GRAY);
+        img.fillRect(0, 0, 100, 2);
+        
+        double life_percent = (this.life / this.total_life);
+        
+        if (life_percent > 0.5 ) {
+            img.setColor(Color.GREEN);
+        } else if (life_percent > 0.3) {
+            img.setColor(Color.ORANGE);
+        } else {
+            img.setColor(Color.RED);
+        }
+        img.fillRect(0, 0, (int)(100 * life_percent), 2);
+    }
+    
     public void act() 
     {
         super.act();
+        
+        this.drawHealthBar();
         
         for (Turret t: turrets) {
             if (MyWorld.helicopter != null) {

@@ -21,6 +21,7 @@ public abstract class Turret extends Actor
     private int fire_rate = 0;
     private int fire_count = 0; // Keep track of fire rate
     private int[] limit_angle_rotation = {0, 360};
+    private int damage = -1;
     
     public Turret(int w, int h, int rx, int ry, String type, String team) {
         this.rx = rx;
@@ -70,7 +71,12 @@ public abstract class Turret extends Actor
                 vx *= speed_randomness;
                 vy *= speed_randomness;
                 
-                Bullet new_bullet = BulletFactory.getBullet(this.type, this.team);
+                Bullet new_bullet;
+                if (this.damage >= 0) {
+                    new_bullet = BulletFactory.getBullet(this.type, this.team, this.damage);
+                } else {
+                    new_bullet = BulletFactory.getBullet(this.type, this.team);
+                }
                 new_bullet.setRotation(this.getRotation());
                 new_bullet.setVelocity(vx, vy);
                 
@@ -133,5 +139,9 @@ public abstract class Turret extends Actor
     
     public void setBulletSpeed(double s) {
         this.muzzle_velocity = s;
+    }
+    
+    public void setDamage(int d) {
+        this.damage = d;
     }
 }

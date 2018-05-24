@@ -14,10 +14,14 @@ public class GuidedMissile extends Bullet
     
     private CombatUnit nearest_enemy = null;
     
-    public GuidedMissile(String team) {
-        super(25, 12, 200, 1000, team); // width, height, life, damage
+    public GuidedMissile(String team, int damage) {
+        super(25, 12, 200, damage, team); // width, height, life, damage
         this.setMass(10);
     }   
+    
+    public GuidedMissile(String team) {
+        this(team, 1000);
+    }
     
     public void act() 
     {
