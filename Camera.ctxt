@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Camera
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Camera\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Camera()
+comment2.params=shift_x\ world
+comment2.target=void\ scrollX(int,\ greenfoot.World)
+comment3.params=world
+comment3.target=void\ doScroll(greenfoot.World)
+numComments=4

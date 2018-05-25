@@ -14,7 +14,7 @@ Bullet also checks collision with image
 Scrolling
 
 
-Ajust sizes
+Ajust sizes of turrets and stuff
 
 Wombat vechicles
 	T2 shield dome generator

@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
 
     public static PhysicalObject helicopter;
+    public static Camera camera;
     
     /**
      * Constructor for objects of class MyWorld.
@@ -20,10 +21,12 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1, false); 
         
+        camera = new Camera();
+        
         Button x = new Button(100, 100, 300, 80, "button");
         
         helicopter = new Helicopter(50, 50, "Bob");
-        addObject(helicopter, 30, 30);
+        addObject(helicopter, 600, 250);
         
         for (int i=0; i<20; i++) {
             LandTile t = new LandTile(100, 100);

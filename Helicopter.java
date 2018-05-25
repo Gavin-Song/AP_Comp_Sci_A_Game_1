@@ -51,10 +51,14 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         }
         if (Greenfoot.isKeyDown("LEFT") || Greenfoot.isKeyDown("A")) {
             this.applyForce(-Config.THRUSTER_FORCE_X, 0);
+            MyWorld.camera.scrollX(-(int)(this.getvx()), this.getWorld());
         }
         if (Greenfoot.isKeyDown("RIGHT") || Greenfoot.isKeyDown("D")) {
             this.applyForce(Config.THRUSTER_FORCE_X, 0);
+            MyWorld.camera.scrollX(-(int)(this.getvx()), this.getWorld());
         }
+        
+        this.setLocation(600, this.getY());
         
         /* Stop before it hits the ground */
         if (this.getY() > Config.GROUND_Y) {
