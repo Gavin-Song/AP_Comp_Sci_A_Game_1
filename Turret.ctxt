@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Turret
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Turret\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Turret\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=w\ h\ rx\ ry\ type\ team
 comment1.target=Turret(int,\ int,\ int,\ int,\ java.lang.String,\ java.lang.String)
 comment10.params=
@@ -21,7 +21,7 @@ comment17.params=d
 comment17.target=void\ setDamage(int)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Turret\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Turret\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
 comment3.params=vx_inital\ vy_inital
 comment3.target=void\ fire(double,\ double)
 comment4.params=vx_inital\ vy_inital\ bullets_per_round

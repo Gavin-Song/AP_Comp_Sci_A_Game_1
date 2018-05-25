@@ -28,7 +28,7 @@ public class MyWorld extends World
         helicopter = new Helicopter(50, 50, "Bob");
         addObject(helicopter, 600, 250);
         
-        for (int i=0; i<20; i++) {
+        for (int i=-12; i<12 * 6; i++) {
             LandTile t = new LandTile(100, 100);
             addObject(t, i * 100 + 50, 750);
         }

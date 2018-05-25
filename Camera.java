@@ -15,12 +15,21 @@ public class Camera
     private int x = 0;
     private int y = 0;
     
+    /* Camera x and y values are "backwards" from normal (left = pos, right = neg) */
+    private int x_left_bound = 1200;
+    private int x_right_bound = -1200 * 5;
+
     public Camera()
     {
         // Does nothing at the moment
     }
     
     public void scrollX(int shift_x, World world) {
+        /* Camera x and y values are "backwards" from normal (left = pos, right = neg) */
+        if (this.x + shift_x < this.x_right_bound || this.x + shift_x > this.x_left_bound) {
+            return;
+        }
+        
         this.dx = shift_x;
         this.x += shift_x;
         this.doScroll(world);
