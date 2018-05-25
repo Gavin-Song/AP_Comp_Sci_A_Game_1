@@ -71,19 +71,32 @@ public abstract class Turret extends Actor
                 vx *= speed_randomness;
                 vy *= speed_randomness;
                 
-                Bullet new_bullet;
-                if (this.damage >= 0) {
-                    new_bullet = BulletFactory.getBullet(this.type, this.team, this.damage);
-                } else {
-                    new_bullet = BulletFactory.getBullet(this.type, this.team);
-                }
-                new_bullet.setRotation(this.getRotation());
-                new_bullet.setVelocity(vx, vy);
                 
-                this.getWorld().addObject(new_bullet, this.getX(), this.getY());
+                Bullet new_bullet = this.obtainBullet(vx, vy);
+                this.addBullet(new_bullet);
             }
             this.fire_count++;
         }
+    }
+    
+    public void addBullet(Bullet new_bullet, int x, int y) {
+        this.getWorld().addObject(new_bullet, x, y);
+    }
+    
+    public void addBullet(Bullet new_bullet) {
+        this.addBullet(new_bullet, this.getX(), this.getY());
+    }
+    
+    public Bullet obtainBullet(double vx, double vy) {
+        Bullet new_bullet;
+        if (this.damage >= 0) {
+            new_bullet = BulletFactory.getBullet(this.type, this.team, this.damage);
+        } else {
+            new_bullet = BulletFactory.getBullet(this.type, this.team);
+        }
+        new_bullet.setRotation(this.getRotation());
+        new_bullet.setVelocity(vx, vy);
+        return new_bullet;
     }
     
     public void resetFireDelay() {
@@ -121,6 +134,18 @@ public abstract class Turret extends Actor
     
     public int getry() {
         return ry;
+    }
+    
+    public int getDamage() {
+        return this.damage;
+    }
+    
+    public String getType() {
+        return this.type;
+    }
+    
+    public String getTeam() {
+        return this.team;
     }
     
     public void setFireRate(int x) {

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LaserBullet
+comment0.text=\n\ Write\ a\ description\ of\ class\ LaserBullet\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=team
+comment1.target=LaserBullet(java.lang.String)
+comment2.params=team\ damage
+comment2.target=LaserBullet(java.lang.String,\ int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

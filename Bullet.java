@@ -42,6 +42,12 @@ public abstract class Bullet extends PhysicalObject
             List intersect = this.getWorld().getObjectsAt(
                 (int)(this.getX() + this.getvx()),
                 (int)(this.getY() + this.getvy()), null);
+            if (intersect.size() == 0) {
+                // Try finding via image intersect instead
+                intersect = this.getIntersectingObjects(null);
+            }
+                
+                
             if (intersect.size() > 0) {
                 if (intersect.get(0) instanceof Collidable || 
                     this.getY() + this.getvy() >= Config.GROUND_Y - this.geth() / 2) {

@@ -1,6 +1,5 @@
 More turret types
 	rocket barrage
-	scanning laser
 	drop bombs
 	emp wave emitter
 	
@@ -8,10 +7,6 @@ More turret types
 		missile defense
 		AA railgun
 		shield dome
-Bullet also checks collision with image
-
-
-Scrolling
 
 
 Ajust sizes of turrets and stuff
