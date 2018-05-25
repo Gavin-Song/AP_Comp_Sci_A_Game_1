@@ -49,12 +49,7 @@ public abstract class Bullet extends PhysicalObject
                 
                 
             if (intersect.size() > 0) {
-                if (intersect.get(0) instanceof Collidable || 
-                    this.getY() + this.getvy() >= Config.GROUND_Y - this.geth() / 2) {
-                    // Collidable terrain object
-                    this.life = 0;
-                }
-                else if (intersect.get(0) instanceof CombatUnit) {
+                if (intersect.get(0) instanceof CombatUnit) {
                     CombatUnit collided = (CombatUnit)intersect.get(0);
                     if ("human".equals( (collided).getTeam() ) && "wombat".equals(this.team)) {
                         this.life = 0;
@@ -64,6 +59,10 @@ public abstract class Bullet extends PhysicalObject
                         this.life = 0;
                         collided.subtractHealth(this.damage);
                     }
+                } else if (intersect.get(0) instanceof Collidable || 
+                    this.getY() + this.getvy() >= Config.GROUND_Y - this.geth() / 2) {
+                    // Collidable terrain object
+                    this.life = 0;
                 }
             }
         } catch(IllegalStateException e) {} // Why greenfoot call act before adding?!

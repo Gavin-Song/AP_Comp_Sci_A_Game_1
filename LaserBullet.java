@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LaserBullet extends Bullet
 {
     public LaserBullet(String team) {
-        this(team, 20);
+        this(team, 100);
     }
     
     public LaserBullet(String team, int damage) {
