@@ -14,7 +14,7 @@ public class MobileMissileLauncher extends WombatLandUnit
     }
     
     public void createTurrets() {
-        this.getTurrets().add(new GuidedMissileTurret(10, 5, -10, 5, "wombat"));
+        this.getTurrets().add(new GuidedMissileTurret(30, 20, 10, -10, "wombat"));
     }
     
     public void act() 

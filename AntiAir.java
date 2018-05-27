@@ -8,7 +8,7 @@ public class AntiAir extends WombatLandUnit
     }
     
     public void createTurrets() {
-        this.getTurrets().add(new WeakAntiAirTurret(10, 5, -10, 5, "wombat"));
+        this.getTurrets().add(new WeakAntiAirTurret(30, 20, 0, -10, "wombat"));
     }
     
     public void act() 

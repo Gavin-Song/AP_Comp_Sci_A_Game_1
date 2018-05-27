@@ -43,6 +43,9 @@ public class Camera
                 if (actor instanceof Helicopter) {
                     continue;
                 }
+                else if (actor instanceof GUI) {
+                    continue;
+                }
                 
                 actor.setLocation(actor.getX() + this.dx, actor.getY());
             } catch (ClassCastException e) { // do nothing

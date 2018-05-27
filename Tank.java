@@ -8,7 +8,7 @@ public class Tank extends WombatLandUnit
     }
     
     public void createTurrets() {
-        this.getTurrets().add(new WeakTankTurret(10, 5, -10, 5, "wombat"));
+        this.getTurrets().add(new WeakTankTurret(30, 15, 0, -5, "wombat"));
     }
     
     public void act() 

@@ -14,8 +14,8 @@ public class HeavyTank extends WombatLandUnit
     }
     
     public void createTurrets() {
-        this.getTurrets().add(new StrongTankTurret(10, 5, -10, 5, "wombat"));
-        this.getTurrets().add(new WeakGatlingGun(10, 5, 5, 5, "wombat"));
+        this.getTurrets().add(new StrongTankTurret(40, 20, 0, -10, "wombat"));
+        this.getTurrets().add(new WeakGatlingGun(30, 15, -20, 0, "wombat"));
     }
     
     public void act() 

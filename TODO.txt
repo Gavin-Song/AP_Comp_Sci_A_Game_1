@@ -9,24 +9,14 @@ More turret types
 		shield dome
 
 
-Make the laser blue
-
-Ajust sizes of turrets and stuff
 
 Wombat vechicles
-	T2 shield dome generator
-	T2 Turtle tank
 	T2 Laser weapon
 	
 	T3 Parasite - low constant laser weapon
-	
+
 	T2 AA
-	
-	
-	Magnetic plasma truck
-		sucks units closer
-	
-	Cloak field generator
+
 	Plane
 	Guided missile
 	

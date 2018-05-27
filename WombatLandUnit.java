@@ -44,6 +44,10 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         this.life -= damage;
     }
     
+    public double getLifePercent() {
+        return this.life / this.total_life;
+    }
+    
     public void drawHealthBar() {
         GreenfootImage img = this.getImage();
         img.setColor(Color.LIGHT_GRAY);
@@ -65,6 +69,10 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
     {
         super.act();
         
+        if (Greenfoot.mouseClicked(this)) {
+            MyWorld.unit_card.setTextByUnit(this);
+        }
+
         this.drawHealthBar();
         
         for (Turret t: turrets) {
@@ -85,5 +93,17 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
     
     public ArrayList<Turret> getTurrets() {
         return this.turrets;
+    }
+    
+    public String getHealthData() {
+        return String.format("%d / %d", (int)this.life, (int)this.total_life);
+    }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getDesc() {
+        return this.desc;
     }
 }
