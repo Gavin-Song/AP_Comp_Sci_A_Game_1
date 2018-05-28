@@ -26,6 +26,7 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         
         this.turrets = new ArrayList<Turret>();
         this.createTurrets();
+        this.drawHealthBar();
     }
     
     public abstract void createTurrets();
@@ -42,6 +43,7 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
     
     public void subtractHealth(int damage) {
         this.life -= damage;
+        this.drawHealthBar();
     }
     
     public double getLifePercent() {
@@ -71,9 +73,7 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         
         if (Greenfoot.mouseClicked(this)) {
             MyWorld.unit_card.setTextByUnit(this);
-        }
-
-        this.drawHealthBar();
+        } 
         
         for (Turret t: turrets) {
             if (MyWorld.helicopter != null) {
@@ -88,6 +88,7 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
                 this.getWorld().removeObject(t);
             }
             this.getWorld().removeObject(this);
+            MyWorld.game_state.incrementScore((int)this.total_life);
         }
     }    
     

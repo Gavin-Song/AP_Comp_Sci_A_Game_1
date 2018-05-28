@@ -2,16 +2,31 @@ More turret types
 	rocket barrage
 	drop bombs
 	emp wave emitter
+		freezes all enemies for a while
+	little doctor device 
 	
 	defense turrets:
 		missile defense
 		AA railgun
 		shield dome
+		
+
+Add player health
+City health
+Spawner class
+
+Upgrade turrets 
+Upgrade shield
+Upgrade regeneration
+
+Temp powerups with cooldowns
 
 
 
 Wombat vechicles
 	T2 Laser weapon
+	
+	potato truck :D
 	
 	T3 Parasite - low constant laser weapon
 

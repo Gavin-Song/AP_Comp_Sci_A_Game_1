@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Flamethrower extends WombatLandUnit
 {
     public Flamethrower(){
-        super(90, 40, 280, "tasmanian devil", "Flamethrower Vehicle"); // width, height, health, name, desc
+        super(90, 40, 280, "Tasmanian Devil", "Flamethrower Vehicle"); // width, height, health, name, desc
         this.setFriction(false);
     }
     

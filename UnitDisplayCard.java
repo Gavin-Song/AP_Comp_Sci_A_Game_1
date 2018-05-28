@@ -11,15 +11,13 @@ public class UnitDisplayCard extends GUI
     private String text = "";
     private String small_text = "";
     private GreenfootImage image;
-    
-    public static final int width = 400;
-    public static final int height = 250;
+
+    public static final int width = 250;
+    public static final int height = 75;
     
     public UnitDisplayCard() {
-        image = new GreenfootImage("button.png");
+        image = new GreenfootImage(this.getImage());
         this.setImage(image);
-        
-        this.getImage().setColor(Color.WHITE);
         this.getImage().scale(UnitDisplayCard.width, UnitDisplayCard.height);
     }
     
@@ -49,7 +47,7 @@ public class UnitDisplayCard extends GUI
         img = this.getImage();
         
         img.setColor(Color.GRAY);
-        img.fillRect(98, 88, 204, 14);
+        img.fillRect(2, 2, 246, 14);
         
         double life_percent = unit.getLifePercent();
         if (life_percent > 0.5 ) {
@@ -59,12 +57,12 @@ public class UnitDisplayCard extends GUI
         } else {
             img.setColor(Color.RED);
         }
-        img.fillRect(98, 88, (int)(204 * life_percent), 14);
+        img.fillRect(2, 2, (int)(246 * life_percent), 14);
         
         img.setColor(Color.BLACK);
-        img.drawString(unit.getHealthData(), 100, 100);
+        img.drawString(unit.getHealthData(), 2, 15);
         
-        img.drawString(this.text, 100, 120);
-        img.drawString(this.small_text, 100, 130);
+        img.drawString(this.text, 2, 30);
+        img.drawString(this.small_text, 2, 40);
     }
 }
