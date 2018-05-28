@@ -24,6 +24,8 @@ Upgrade regeneration
 Temp powerups with cooldowns
 
 
+Explode units on death
+
 
 Wombat vechicles
 	T2 Laser weapon
@@ -40,5 +42,4 @@ Wombat vechicles
 	Wombat Tank (EXP)
 	Experimental land carrier
 
-Background
 
