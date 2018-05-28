@@ -75,6 +75,13 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
             MyWorld.unit_card.setTextByUnit(this);
         } 
         
+        // Off screen
+        if (this.getX() - MyWorld.camera.getx() < -MyWorld.camera.getLeftXBound()) {
+            this.getWorld().removeObject(this);
+            MyWorld.game_state.damageCity((int)this.life);
+            return;
+        }
+        
         for (Turret t: turrets) {
             if (MyWorld.helicopter != null) {
                 t.target(MyWorld.helicopter.getX(), MyWorld.helicopter.getY());

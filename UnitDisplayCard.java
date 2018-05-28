@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 /**
  * Write a description of class UnitDisplayCard here.
@@ -10,6 +11,8 @@ public class UnitDisplayCard extends GUI
 {
     private String text = "";
     private String small_text = "";
+    private String turrets = "";
+    
     private GreenfootImage image;
 
     public static final int width = 250;
@@ -38,10 +41,25 @@ public class UnitDisplayCard extends GUI
         this.small_text = s;
     }
     
+    public void setTurrets(String s) {
+        this.turrets = s;
+    }
+    
     public void setTextByUnit(WombatLandUnit unit) {
         this.setText(unit.getName());
         this.setSmallText(unit.getDesc());
         
+        String t = "";
+        ArrayList<Turret> turrets_list = unit.getTurrets();
+        for(int i=0; i<Math.min(turrets_list.size(), 3); i++) {
+            t += turrets_list.get(i).getName() + " ";
+        }
+        this.setTurrets(t);
+        
+        this.render(unit);
+    }
+    
+    public void render(WombatLandUnit unit) {
         GreenfootImage img = new GreenfootImage(image);
         this.setImage(img);
         img = this.getImage();
@@ -60,9 +78,12 @@ public class UnitDisplayCard extends GUI
         img.fillRect(2, 2, (int)(246 * life_percent), 14);
         
         img.setColor(Color.BLACK);
-        img.drawString(unit.getHealthData(), 2, 15);
+        img.drawString(unit.getHealthData(), 4, 15);
         
-        img.drawString(this.text, 2, 30);
-        img.drawString(this.small_text, 2, 40);
+        img.drawString(this.text, 4, 30);
+        img.drawString(this.small_text, 4, 40);
+
+        img.setColor(Color.BLUE);
+        img.drawString(this.turrets, 4, 60);
     }
 }

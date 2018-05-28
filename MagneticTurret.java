@@ -70,4 +70,8 @@ public class MagneticTurret extends Turret
         this.nearest_enemy = nearby_objects.size() > 0 ?
             (CombatUnit)nearby_objects.get(0) : null;
     }
+    
+    public String getName() {
+        return "Magnetic";
+    }
 }

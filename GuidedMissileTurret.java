@@ -14,4 +14,8 @@ public class GuidedMissileTurret extends Turret
         this.setBulletSpeed(Config.BASIC_BULLET_SPEED * 0.4);
         this.setFireRate(220);
     }
+    
+    public String getName() {
+        return "Missile";
+    }
 }

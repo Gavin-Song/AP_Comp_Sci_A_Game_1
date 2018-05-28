@@ -13,4 +13,8 @@ public class FireTurret extends Turret
         this.setRandomness(0.9, 0.03);
         this.setBulletSpeed(Config.BASIC_BULLET_SPEED * 0.2);
     }
+    
+    public String getName() {
+        return "Flamethrower";
+    }
 }

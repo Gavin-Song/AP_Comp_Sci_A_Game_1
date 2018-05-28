@@ -3,4 +3,6 @@ comment0.target=FireTurret
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ FireTurret\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=w\ h\ rx\ ry\ team
 comment1.target=FireTurret(int,\ int,\ int,\ int,\ java.lang.String)
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ getName()
+numComments=3

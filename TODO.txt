@@ -12,7 +12,6 @@ More turret types
 		
 
 Add player health
-City health
 Spawner class
 
 Upgrade turrets 

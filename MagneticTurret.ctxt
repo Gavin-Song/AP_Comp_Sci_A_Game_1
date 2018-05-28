@@ -7,4 +7,6 @@ comment2.params=vx_inital\ vy_inital\ bullets_per_round
 comment2.target=void\ fire(double,\ double,\ int)
 comment3.params=
 comment3.target=void\ obtainNearestEnemy()
-numComments=4
+comment4.params=
+comment4.target=java.lang.String\ getName()
+numComments=5

@@ -169,4 +169,6 @@ public abstract class Turret extends Actor
     public void setDamage(int d) {
         this.damage = d;
     }
+    
+    public abstract String getName();
 }

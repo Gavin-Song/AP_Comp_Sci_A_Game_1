@@ -18,4 +18,8 @@ public class GameState
     public long getScore() {
         return score;
     }
+    
+    public int getCityHealth() {
+        return this.city_health;
+    }
 }

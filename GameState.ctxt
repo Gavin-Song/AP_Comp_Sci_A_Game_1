@@ -8,4 +8,6 @@ comment3.params=add
 comment3.target=void\ incrementScore(long)
 comment4.params=
 comment4.target=long\ getScore()
-numComments=5
+comment5.params=
+comment5.target=int\ getCityHealth()
+numComments=6

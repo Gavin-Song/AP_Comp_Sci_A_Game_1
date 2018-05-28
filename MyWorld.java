@@ -43,7 +43,7 @@ public class MyWorld extends World
         helicopter = new Helicopter(50, 50, "Bob");
         addObject(helicopter, 600, 250);
         
-        for (int i=-12; i<12 * 6; i++) {
+        for (int i=-12 * 5; i<12 * 2; i++) {
             LandTile t = new LandTile(100, 100);
             addObject(t, i * 100 + 50, WORLD_HEIGHT - 50);
         }
@@ -51,7 +51,7 @@ public class MyWorld extends World
         addObject(x, x.getx(), x.gety());
         
         for(int i=0;i<30;i++){
-            WombatLandUnit lab = new HeavyTank();
+            WombatLandUnit lab = new LAB();
             addObject(lab, 1200 + i * 100, WORLD_HEIGHT - 300);
         }
         
@@ -62,7 +62,8 @@ public class MyWorld extends World
     public void act() {
         super.act();
         
-        this.showText(String.format("SCORE %010d", (int)game_state.getScore()), 100, 20);
+        this.showText(String.format("Score %010d", (int)game_state.getScore()), 100, 20);
+        this.showText(String.format("City HP %05d", (int)game_state.getCityHealth()), 78, 40);
 
         frame_count = (frame_count + 1) % 120;
     }

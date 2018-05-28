@@ -16,8 +16,8 @@ public class Camera
     private int y = 0;
     
     /* Camera x and y values are "backwards" from normal (left = pos, right = neg) */
-    private int x_left_bound = MyWorld.WORLD_WIDTH;
-    private int x_right_bound = -MyWorld.WORLD_WIDTH * 5;
+    private int x_left_bound = MyWorld.WORLD_WIDTH  * 5;
+    private int x_right_bound = -MyWorld.WORLD_WIDTH;
 
     public Camera()
     {
@@ -51,6 +51,22 @@ public class Camera
             } catch (ClassCastException e) { // do nothing
             }
         }
+    }
+    
+    public int getx() {
+        return this.x;
+    }
+    
+    public int gety() {
+        return this.y;
+    }
+    
+    public int getLeftXBound() {
+        return this.x_left_bound;
+    }
+    
+    public int getRightXBound() {
+        return this.x_right_bound;
     }
 
 }

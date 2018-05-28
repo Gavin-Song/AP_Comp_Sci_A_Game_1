@@ -12,4 +12,8 @@ public class MachineGunTurret extends Turret
         super(w, h, rx, ry, "machine_gun", team);
         this.setRandomness(0.2, 0.01);
     }
+    
+    public String getName() {
+        return "Automatic";
+    }
 }

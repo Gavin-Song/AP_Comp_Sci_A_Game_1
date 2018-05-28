@@ -13,4 +13,8 @@ public class ShellTurret extends Turret
         this.setRandomness(0.2, 0.01);
         this.setFireRate(10);
     }  
+    
+    public String getName() {
+        return "Shell";
+    }
 }
