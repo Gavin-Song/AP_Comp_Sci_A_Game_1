@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun May 27 20:48:33 EDT 2018
+#Sun May 27 21:00:47 EDT 2018
 target24.type=ClassTarget
 target16.name=MobileMissileLauncher
 target11.typeParameters=
@@ -251,7 +251,7 @@ dependency24.from=FireTurret
 version=3.0.0
 target22.width=80
 target26.height=50
-class.LandTile.image=sand.jpg
+class.LandTile.image=land.png
 dependency51.from=Helicopter
 target4.showInterface=false
 target17.width=110
@@ -313,7 +313,7 @@ target10.y=0
 target10.x=0
 dependency40.type=UsesDependency
 dependency15.to=WeakGatlingGun
-class.MyWorld.image=space1.jpg
+class.MyWorld.image=back.png
 target30.type=ClassTarget
 dependency4.to=PhysicalObject
 dependency12.from=GuidedMissile

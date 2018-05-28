@@ -28,6 +28,9 @@ public class MyWorld extends World
     {    
         super(WORLD_WIDTH, WORLD_HEIGHT, 1, false);  // width, height, cell size, border
         
+        // Background
+        this.getBackground().scale(WORLD_WIDTH, WORLD_HEIGHT);
+        
         // Important world variables
         camera = new Camera();
         game_state = new GameState();
@@ -51,7 +54,7 @@ public class MyWorld extends World
         addObject(x, x.getx(), x.gety());
         
         for(int i=0;i<30;i++){
-            WombatLandUnit lab = new PotatoTruck();
+            WombatLandUnit lab = new Tank();
             addObject(lab, 1200 + i * 100, WORLD_HEIGHT - 300);
         }
         
