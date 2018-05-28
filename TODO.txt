@@ -14,6 +14,9 @@ More turret types
 Add player health
 Spawner class
 
+Create "damage" poroperty for units instead 
+	multiply by life_percent
+
 Upgrade turrets 
 Upgrade shield
 Upgrade regeneration
@@ -24,8 +27,7 @@ Temp powerups with cooldowns
 
 Wombat vechicles
 	T2 Laser weapon
-	
-	potato truck :D
+
 	
 	T3 Parasite - low constant laser weapon
 

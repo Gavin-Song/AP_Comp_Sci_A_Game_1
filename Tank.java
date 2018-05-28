@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Tank extends WombatLandUnit
 {
     public Tank(){
-        super(80, 40, 30, "WA6 Devil", "Medium Landcruiser"); // width, height, health, name, desc
+        super(80, 40, 30, "WA6 Devil", "Light Landcruiser"); // width, height, health, name, desc
         this.setFriction(false);
     }
     

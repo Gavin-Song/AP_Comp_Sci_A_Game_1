@@ -51,11 +51,11 @@ public class MyWorld extends World
         addObject(x, x.getx(), x.gety());
         
         for(int i=0;i<30;i++){
-            WombatLandUnit lab = new LAB();
+            WombatLandUnit lab = new PotatoTruck();
             addObject(lab, 1200 + i * 100, WORLD_HEIGHT - 300);
         }
         
-        WombatLandUnit a = new T3AntiAir();
+        WombatLandUnit a = new ShieldGenerator();
             addObject(a, 1200 + 2 * 100, WORLD_HEIGHT - 300);
     }
     

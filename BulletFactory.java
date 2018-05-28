@@ -17,6 +17,8 @@ public class BulletFactory
             return new GuidedMissile(team);
         } else if ("shell_gun".equals(type)) {
             return new ShellBullet(team);
+        } else if ("potato_gun".equals(type)) {
+            return new PotatoBullet(team);
         }
         return null;
     }
@@ -30,6 +32,8 @@ public class BulletFactory
             return new GuidedMissile(team, damage);
         } else if ("shell_gun".equals(type)) {
             return new ShellBullet(team, damage);
+        } else if ("potato_gun".equals(type)) {
+            return new PotatoBullet(team, damage);
         }
         return null;
     }
