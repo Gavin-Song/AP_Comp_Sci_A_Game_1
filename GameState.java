@@ -8,8 +8,12 @@ public class GameState
     private int player_base_health = Config.HELICOPTER_LIFE;
     private int player_health = player_base_health;
     
+    private Spawner spawner;
+    private long start_time;
+    
     public GameState() {
-        // No need for constructor
+        spawner = new Spawner();
+        start_time = System.currentTimeMillis();
     }
     
     public void updatePlayerBaseHealth(int n) {
@@ -46,6 +50,10 @@ public class GameState
     
     public int getPlayerBaseHealth() {
         return this.player_base_health;
+    }
+    
+    public Spawner getSpawner() {
+        return this.spawner;
     }
     
     public int getPlayerHealth() {

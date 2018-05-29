@@ -11,8 +11,10 @@ More turret types
 		shield dome
 		
 
-Add player health
-Spawner class
+Display player name
+
+wave numbers
+
 
 Create "damage" poroperty for units instead 
 	multiply by life_percent
@@ -23,6 +25,8 @@ Upgrade regeneration
 
 Temp powerups with cooldowns
 
+
+Animated textures
 
 Explode units on death
 

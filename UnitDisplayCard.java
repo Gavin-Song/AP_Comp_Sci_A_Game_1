@@ -9,9 +9,9 @@ import java.util.*;
  */
 public class UnitDisplayCard extends GUI
 {
-    private String text = "";
-    private String small_text = "";
-    private String turrets = "";
+    private String text = "Get information for a wombat unit";
+    private String small_text = "about its name and turrets";
+    private String turrets = "Simply click on a unit!";
     
     private GreenfootImage image;
 
@@ -22,6 +22,11 @@ public class UnitDisplayCard extends GUI
         image = new GreenfootImage(this.getImage());
         this.setImage(image);
         this.getImage().scale(UnitDisplayCard.width, UnitDisplayCard.height);
+        
+        // Display default text
+        GreenfootImage img = new GreenfootImage(image);
+        this.setImage(img);
+        this.renderText(this.getImage());
     }
     
     /**
@@ -76,10 +81,15 @@ public class UnitDisplayCard extends GUI
             img.setColor(Color.RED);
         }
         img.fillRect(2, 2, (int)(246 * life_percent), 14);
-        
         img.setColor(Color.BLACK);
         img.drawString(unit.getHealthData(), 4, 15);
         
+        this.renderText(img);
+    }
+    
+    public void renderText(GreenfootImage img) {
+        img.setColor(Color.BLACK);
+
         img.drawString(this.text, 4, 30);
         img.drawString(this.small_text, 4, 40);
 

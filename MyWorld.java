@@ -46,7 +46,7 @@ public class MyWorld extends World
         addObject(player_health, 10 + HealthBar.width / 2, 10 + HealthBar.height / 2);
         addObject(city_health, 10 + HealthBar.width / 2, 40 + HealthBar.height / 2);
 
-        this.setPaintOrder(UnitDisplayCard.class, Button.class, PhysicalObject.class, LandTile.class);
+        this.setPaintOrder(GUI.class, PhysicalObject.class, LandTile.class);
         
         
         helicopter = new Helicopter(50, 50, "Bob");
@@ -58,24 +58,31 @@ public class MyWorld extends World
         }
    
         
-        for(int i=0;i<30;i++){
+        /* for(int i=0;i<30;i++){
             WombatLandUnit lab = new Tank();
             addObject(lab, 1200 + i * 100, WORLD_HEIGHT - 300);
         }
         
         WombatLandUnit a = new ShieldGenerator();
-            addObject(a, 1200 + 2 * 100, WORLD_HEIGHT - 300);
+            addObject(a, 1200 + 2 * 100, WORLD_HEIGHT - 300); */
     }
     
     public void act() {
         super.act();
         
+        // Display score and time remaining
         this.showText(String.format("Score %010d", (int)game_state.getScore()), 100, 90);
-        //this.showText(String.format("City HP %05d", (int)game_state.getCityHealth()), 78, 40);
+
         
+        // Render the cit and player health bars
         city_health.updateHealth((int)game_state.getCityHealth());
         player_health.updateTotalHealth(game_state.getPlayerBaseHealth());
         player_health.updateHealth(game_state.getPlayerHealth());
+        
+        // Spawn waves if needed
+        if (game_state.getSpawner().shouldSpawnWave()) {
+            game_state.getSpawner().createWave(this);
+        }
 
         frame_count = (frame_count + 1) % 120;
     }

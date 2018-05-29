@@ -16,4 +16,6 @@ comment6.params=unit
 comment6.target=void\ setTextByUnit(WombatLandUnit)
 comment7.params=unit
 comment7.target=void\ render(WombatLandUnit)
-numComments=8
+comment8.params=img
+comment8.target=void\ renderText(greenfoot.GreenfootImage)
+numComments=9
