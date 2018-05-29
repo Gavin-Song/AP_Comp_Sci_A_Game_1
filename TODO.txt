@@ -22,13 +22,9 @@ Temp powerups with cooldowns
 
 
 Abilities
-	Regeneration
-	Damage
-	Turret upgrade
-	Health
-	Resource generation
-
-
+	Upgrade turrets
+	
+Add sound
 
 Animated textures
 

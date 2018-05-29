@@ -19,6 +19,9 @@ public class MyWorld extends World
     public static HealthBar player_health;
     public static HealthBar player_resource;
     
+    public static HashMap upgrade_buttons;
+
+    
     public static final int WORLD_WIDTH = 1200;
     public static final int WORLD_HEIGHT = 600;
     
@@ -35,6 +38,7 @@ public class MyWorld extends World
         // Background
         this.getBackground().scale(WORLD_WIDTH, WORLD_HEIGHT);
         
+        
         // Important world variables
         camera = new Camera();
         game_state = new GameState();
@@ -49,6 +53,20 @@ public class MyWorld extends World
         addObject(city_health, 10 + HealthBar.width / 2, 40 + HealthBar.height / 2);
         addObject(player_resource, 10 + HealthBar.width / 2, 70 + HealthBar.height / 2);
 
+        
+        // Upgrade the player buttons
+        upgrade_buttons = new HashMap();
+        for (int i=0; i<GameState.possible_upgrades.length; i++) {
+            Button to_add = new UpgradeButton(110, 50, 
+                (i+1) + "] " + GameState.possible_upgrades[i] + "++",
+                GameState.possible_upgrades[i].toLowerCase(),
+                i + 1);
+            upgrade_buttons.put(GameState.possible_upgrades[i].toLowerCase(), to_add);
+            addObject(to_add, 370 + i * 120, 40);
+        }
+        
+        
+        // GUI is drawn first, then game objects, then the ground
         this.setPaintOrder(GUI.class, PhysicalObject.class, LandTile.class);
         
         
@@ -86,6 +104,7 @@ public class MyWorld extends World
         city_health.updateHealth((int)game_state.getCityHealth());
         player_health.updateTotalHealth(game_state.getPlayerBaseHealth());
         player_health.updateHealth(game_state.getPlayerHealth());
+        player_resource.updateTotalHealth(game_state.getTotalPlayerResource());
         player_resource.updateHealth(game_state.getPlayerResource());
         
         // Spawn waves if needed
