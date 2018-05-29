@@ -14,5 +14,6 @@ public class PotatoBullet extends Bullet
     
     public PotatoBullet(String team, int damage) {
         super(10, 10, 50, damage, team); // width, height, life, damage
+        this.setGravity(true);
     }
 }

@@ -11,7 +11,6 @@ public class Helicopter extends PhysicalObject implements CombatUnit
 {
     private String name;
     private ArrayList<Turret> turrets;
-    private int life = Config.HELICOPTER_LIFE;
     
     public Helicopter(int w, int h, String name) {
         super(w, h, Config.HELICOPTER_MASS);
@@ -32,7 +31,7 @@ public class Helicopter extends PhysicalObject implements CombatUnit
     }
     
     public void subtractHealth(int damage) {
-        this.life -= damage;
+        MyWorld.game_state.addPlayerHealth(-damage);
     }
     
     /**
