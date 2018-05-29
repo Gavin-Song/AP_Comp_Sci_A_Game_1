@@ -59,8 +59,8 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         this.setLocation(600, this.getY());
         
         /* Stop before it hits the ground */
-        if (this.getY() > Config.GROUND_Y) {
-            this.setLocation(this.getX(), Config.GROUND_Y);
+        if (this.getY() > Config.GROUND_Y - Config.GROUND_CLEARANCE) {
+            this.setLocation(this.getX(), Config.GROUND_Y - Config.GROUND_CLEARANCE);
         }
         
         for (Turret t: turrets) {
@@ -76,5 +76,9 @@ public class Helicopter extends PhysicalObject implements CombatUnit
     
     public String getTeam() {
         return "human";
+    }
+    
+    public String getName() {
+        return this.name;
     }
 }

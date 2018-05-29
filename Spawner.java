@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class Spawner  
 {
-    private static WombatLandUnit[][] waves = {
+    public static final WombatLandUnit[][] WAVES = {
         {
             // Wave 1 Some supply trucks. Nothing dangerous
             new SupplyTruck(), new SupplyTruck(), 
@@ -67,9 +67,10 @@ public class Spawner
         }
     };
 
-    private static int UNIT_SPACING = 100; // Space between unit spawns
-    private static int X_OFFSET = 100; // Offset from edge of screen
-    private static long TIME_BETWEEN_WAVES = 8; // Seconds between waves
+    public static final int UNIT_SPACING = 100; // Space between unit spawns
+    public static final int X_OFFSET = 100; // Offset from edge of screen
+    public static final int TIME_BETWEEN_WAVES = 8; // Seconds between waves
+    public static final int END_GAME_EXTRA_TIME = 10; // Extra seconds after last wave spawns
     
     private int current_wave = 0;
     private static long last_wave = 0;
@@ -80,15 +81,15 @@ public class Spawner
     }
     
     public void createWave(World world) {
-        if (current_wave >= waves.length) {
+        if (current_wave >= WAVES.length) {
             last_wave = System.currentTimeMillis() + 1000000000;
             return;
         }
         
         int wave = current_wave;
         
-        for (int i=0; i<waves[wave].length; i++) {
-            world.addObject(waves[wave][i], 
+        for (int i=0; i<WAVES[wave].length; i++) {
+            world.addObject(WAVES[wave][i], 
                 -MyWorld.camera.getRightXBound() + i * Spawner.UNIT_SPACING + Spawner.X_OFFSET, 
                 Config.GROUND_Y - 100);
         }
@@ -98,5 +99,9 @@ public class Spawner
     
     public boolean shouldSpawnWave() {
         return (System.currentTimeMillis() - last_wave) / 1000 >= TIME_BETWEEN_WAVES;
+    }
+    
+    public int getWave() {
+        return this.current_wave;
     }
 }

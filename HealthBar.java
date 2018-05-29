@@ -51,6 +51,11 @@ public class HealthBar extends GUI
         this.render();
     }
     
+    public void updateLabel(String s) {
+        this.label = s;
+        this.render();
+    }
+    
     public double getLifePercent() {
         return (double)this.value / this.total;
     }

@@ -17,9 +17,10 @@ public class MyWorld extends World
     
     public static HealthBar city_health;
     public static HealthBar player_health;
+    public static HealthBar player_resource;
     
-    public static final int WORLD_WIDTH = 1100;
-    public static final int WORLD_HEIGHT = 700;
+    public static final int WORLD_WIDTH = 1200;
+    public static final int WORLD_HEIGHT = 600;
     
     public static int frame_count = 0;
     
@@ -41,10 +42,12 @@ public class MyWorld extends World
         
         player_health = new HealthBar("Player Health", 100);
         city_health = new HealthBar("City Health", GameState.TOTAL_CITY_HEALTH);
+        player_resource = new HealthBar("Resource", GameState.TOTAL_RESOURCE);
         
         addObject(unit_card, 10 + UnitDisplayCard.width / 2, WORLD_HEIGHT - UnitDisplayCard.height / 2 - 10);
         addObject(player_health, 10 + HealthBar.width / 2, 10 + HealthBar.height / 2);
         addObject(city_health, 10 + HealthBar.width / 2, 40 + HealthBar.height / 2);
+        addObject(player_resource, 10 + HealthBar.width / 2, 70 + HealthBar.height / 2);
 
         this.setPaintOrder(GUI.class, PhysicalObject.class, LandTile.class);
         
@@ -69,15 +72,21 @@ public class MyWorld extends World
     
     public void act() {
         super.act();
+        game_state.update();
         
         // Display score and time remaining
-        this.showText(String.format("Score %010d", (int)game_state.getScore()), 100, 90);
-
+        this.showText(String.format("Score %010d", (int)game_state.getScore()), 100, 130);
+        this.showText("Time left: " + game_state.getGameTimeRemaining(), 87, 150);
+        this.showText(String.format("Wave %03d", game_state.getSpawner().getWave()), 59, 170);
         
         // Render the cit and player health bars
+        player_resource.updateLabel("Resource (+" + game_state.getPlayerResourceRate() + ")");
+        player_health.updateLabel("Player Health (+" + game_state.getPlayerRegenRate() + ")");
+        
         city_health.updateHealth((int)game_state.getCityHealth());
         player_health.updateTotalHealth(game_state.getPlayerBaseHealth());
         player_health.updateHealth(game_state.getPlayerHealth());
+        player_resource.updateHealth(game_state.getPlayerResource());
         
         // Spawn waves if needed
         if (game_state.getSpawner().shouldSpawnWave()) {

@@ -11,19 +11,23 @@ More turret types
 		shield dome
 		
 
-Display player name
-
-wave numbers
 
 
 Create "damage" poroperty for units instead 
 	multiply by life_percent
 
-Upgrade turrets 
-Upgrade shield
-Upgrade regeneration
+
 
 Temp powerups with cooldowns
+
+
+Abilities
+	Regeneration
+	Damage
+	Turret upgrade
+	Health
+	Resource generation
+
 
 
 Animated textures

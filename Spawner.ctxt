@@ -7,4 +7,6 @@ comment2.params=world
 comment2.target=void\ createWave(greenfoot.World)
 comment3.params=
 comment3.target=boolean\ shouldSpawnWave()
-numComments=4
+comment4.params=
+comment4.target=int\ getWave()
+numComments=5

@@ -10,6 +10,7 @@ public class Config
     public static final double FRICTION = 0.002;
     public static final double MIN_VEL = 1;
     public static final int GROUND_Y = MyWorld.WORLD_HEIGHT - 100;
+    public static final int GROUND_CLEARANCE = 100;  // Min height above the ground for helicopter
     
     public static final int HELICOPTER_LIFE = 1000;
 
