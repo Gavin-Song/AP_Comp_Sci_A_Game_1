@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=EMPTurret
-comment0.text=\r\n\ Stun\ turret.\ Fires\ EMPBullets\ that\ freeze\r\n\ units\ in\ place.\r\n\ \r\n\ @author\ (Gavin\ Song)\ \r\n\ @version\ (1.0.0)\r\n
+comment0.text=\n\ Stun\ turret.\ Fires\ EMPBullets\ that\ freeze\n\ units\ in\ place.\n\ \n\ @author\ (Gavin\ Song)\ \n\ @version\ (1.0.0)\n
 comment1.params=w\ h\ rx\ ry\ team
 comment1.target=EMPTurret(int,\ int,\ int,\ int,\ java.lang.String)
 comment2.params=

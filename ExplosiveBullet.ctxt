@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ExplosiveBullet
+comment0.text=\n\ Write\ a\ description\ of\ class\ ExplosiveBullet\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=team
+comment1.target=ExplosiveBullet(java.lang.String)
+comment2.params=c
+comment2.target=void\ affectEnemy(CombatUnit)
+comment3.params=team\ damage
+comment3.target=ExplosiveBullet(java.lang.String,\ int)
+numComments=4

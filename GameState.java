@@ -2,9 +2,9 @@ import java.util.*;
 
 public class GameState  
 {
-    public static int TOTAL_CITY_HEALTH = 5000;
-    public static int TOTAL_RESOURCE = 5000;
-    public static double COST_MULTIPLIER = 2; // How much more expensive upgrade gets each time
+    public static int TOTAL_CITY_HEALTH = 5000;  // Max city health
+    public static int TOTAL_RESOURCE = 5000;  // Base max resource
+    public static double COST_MULTIPLIER = 1.5; // How much more expensive upgrade gets each time
     
     private int city_health = TOTAL_CITY_HEALTH;
     private long score = 0;
@@ -51,6 +51,8 @@ public class GameState
         
         this.player_health = Math.max(this.player_health, 0);
         this.city_health = Math.max(this.city_health, 0);
+        
+        this.player_resource = 9999999;
     }
     
     public int isGameOver() {
@@ -111,6 +113,24 @@ public class GameState
                     // Swap missile turret for fire turret
                     MyWorld.helicopter.removeTurret(2);
                     t = new FireTurret(60, 30, 90, -40, "human");
+                    break;
+                }
+                case 6: {
+                    // Swap out fireturret for fireball turret
+                    MyWorld.helicopter.removeTurret(3);
+                    t = new ExplosiveTurret(60, 30, 90, -40, "human");
+                    break;
+                }
+                case 7: {
+                    // Swap out machine gun for quantum turret
+                    MyWorld.helicopter.removeTurret(0);
+                    t = new QuantumTurret(50, 30, 20, 45, "human");
+                    break;
+                }
+                case 8: {
+                    // Swap out weak gatling turret for quantum turret
+                    MyWorld.helicopter.removeTurret(1);
+                    t = new QuantumTurret(36, 20, -120, 30, "human");
                     break;
                 }
                 default: {

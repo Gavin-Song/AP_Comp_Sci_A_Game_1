@@ -1,31 +1,6 @@
-
-		
-Ideas:
-	FireballTurret
-		Explosions
-	QuantumPhasicMicrobeam
-
-
-TurretProgression
-	Weak Gatling Gun
-	Shell Turret
-	Another machine gun
-	GuidedMissile Turret (swap out shell turret)
-	EMPTurret
-	Fireturret (Swap out guidedmissile turret)
-	
-	Fireball turret (Swap out fireturret)
-	(Swap out machinegun turret)
-	QuantumPhasicMicrobeam
-	(Swap out quatumphasic)
-	NULL RAINBOW LAZOR
-
-
 Create "damage" poroperty for units instead 
 	multiply by life_percent
 
-Abilities
-	Upgrade turrets
 	
 Add sound
 
@@ -39,7 +14,6 @@ Nuke good ending
 Wombat vechicles
 	T3 Parasite - low constant laser weapon
 
-	T2 AA
 
 	Plane
 	Guided missile

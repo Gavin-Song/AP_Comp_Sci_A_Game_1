@@ -8,11 +8,12 @@ public class Config
     public static final double GRAVITY = 1.3;
     public static final double UP_ACCEL = 2.3;
     public static final double FRICTION = 0.002;
-    public static final double MIN_VEL = 1;
+    public static final double MIN_VEL = 1; // Velocities less than this will be set to 0
+    
     public static final int GROUND_Y = MyWorld.WORLD_HEIGHT - 100;
     public static final int GROUND_CLEARANCE = 100;  // Min height above the ground for helicopter
     
-    public static final int HELICOPTER_LIFE = 1000;
+    public static final int HELICOPTER_LIFE = 2000;
 
     /* Thruster forces on the Helicopter (Controls)
      *      THRUSTER_FORCE_X is force applied in x direction
@@ -27,5 +28,5 @@ public class Config
     /* Bullet config */
     public static final double BASIC_BULLET_SPEED = 20;
     
-    private Config(){}
+    private Config() {}
 }

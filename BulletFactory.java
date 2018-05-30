@@ -21,6 +21,10 @@ public class BulletFactory
             return new PotatoBullet(team);
         } else if ("emp_gun".equals(type)) {
             return new EMPBullet(team);
+        } else if ("explosive_gun".equals(type)) {
+            return new ExplosiveBullet(team);
+        } else if ("quantum_gun".equals(type)) {
+            return new QuantumBullet(team);
         }
         return null;
     }
@@ -38,6 +42,10 @@ public class BulletFactory
             return new PotatoBullet(team, damage);
         } else if ("emp_gun".equals(type)) {
             return new EMPBullet(team, damage);
+        } else if ("explosive_gun".equals(type)) {
+            return new ExplosiveBullet(team, damage);
+        } else if ("quantum_gun".equals(type)) {
+            return new QuantumBullet(team, damage);
         }
         return null;
     }

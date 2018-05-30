@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MagneticTurret
-comment0.text=\r\n\ MagneticTurret\ -\ Pulls\ enemies\ towards\ itself.\ Not\ very\ \r\n\ effective\ when\ multiple\ enemies\ are\ present;\ thus\ it\ should\r\n\ ONLY\ be\ used\ in\ WombatUnits\r\n\ \r\n\ @author\ (Gavin\ Song)\ \r\n\ @version\ (1.0.0)\r\n
+comment0.text=\n\ MagneticTurret\ -\ Pulls\ enemies\ towards\ itself.\ Not\ very\ \n\ effective\ when\ multiple\ enemies\ are\ present;\ thus\ it\ should\n\ ONLY\ be\ used\ in\ WombatUnits\n\ \n\ @author\ (Gavin\ Song)\ \n\ @version\ (1.0.0)\n
 comment1.params=w\ h\ rx\ ry\ team
 comment1.target=MagneticTurret(int,\ int,\ int,\ int,\ java.lang.String)
 comment2.params=vx_inital\ vy_inital\ bullets_per_round
