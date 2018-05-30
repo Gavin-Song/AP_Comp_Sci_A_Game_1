@@ -2,7 +2,7 @@ import java.util.*;
 
 public class GameState  
 {
-    public static int TOTAL_CITY_HEALTH = 1000;
+    public static int TOTAL_CITY_HEALTH = 5000;
     public static int TOTAL_RESOURCE = 5000;
     public static double COST_MULTIPLIER = 2; // How much more expensive upgrade gets each time
     
