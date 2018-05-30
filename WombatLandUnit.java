@@ -106,6 +106,11 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         }
     }
     
+    public void setHealth(int h) {
+        this.total_life = h;
+        this.life = h;
+    }
+    
     public ArrayList<Turret> getTurrets() {
         return this.turrets;
     }

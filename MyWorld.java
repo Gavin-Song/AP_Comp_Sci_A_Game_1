@@ -117,10 +117,12 @@ public class MyWorld extends World
         
         if (card == null) {
             if (game_state.isGameOver() == 2) {
+                helicopter.subtractHealth(100000);
                 card = new BadGameOverCard();
                 addObject(card, WORLD_WIDTH / 2, WORLD_HEIGHT / 2);
             }
             else if (game_state.isGameOver() == 1) {
+                helicopter.subtractHealth(100000);
                 card = new GoodGameOverCard();
                 addObject(card, WORLD_WIDTH / 2, WORLD_HEIGHT / 2);
             }

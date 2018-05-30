@@ -3,7 +3,6 @@
 Ideas:
 	FireballTurret
 		Explosions
-	EMPTurret
 	QuantumPhasicMicrobeam
 
 
@@ -33,13 +32,7 @@ Add sound
 Animated textures
 
 
-
-GameOver when city dies or player dies
-GameOver when time runs out (nuke)
-
-
-
-Explode the ship and add burning wreckage?
+Nuke good ending
 
 
 

@@ -59,9 +59,7 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         super.act();
         if (MyWorld.game_state.getPlayerHealth() > 0) {
             this.doWhileAlive();
-            
-            this.subtractHealth(10);
-            
+
             /* Stop before it hits the ground */
             if (this.getY() > Config.GROUND_Y - Config.GROUND_CLEARANCE) {
                 this.setLocation(this.getX(), Config.GROUND_Y - Config.GROUND_CLEARANCE);

@@ -63,7 +63,37 @@ public class Spawner
             new TurtleTank(), new TurtleTank(), new TurtleTank()
         },
         {
-            // Wave 12 throws in 
+            // Wave 12 throws in even more TurtleTanks and EMP
+            new EMPCannon(), new TurtleTank(), new TankHealth2(),
+            new TankHealth2(), new TankHealth2(), new AntiAir(), new AntiAir(), 
+            new AntiAir(), new AntiAir(), new AntiAir(), new AntiAir(), new AntiAir(),
+            new SupplyTruck()
+        },
+        {
+            // Wave 13 brings more fun
+            new T3AntiAir(), new ShieldGenerator(), new HeavyTank()
+        },
+        {
+            // Wave 14 :D
+            new HeavyTank(), new ShieldGenerator(), new HeavyTank(), new HeavyTank(), new ShieldGenerator()
+        },
+        {
+            // Wave 15. i'm just giving up
+            new T3AntiAir(), new MagneticTruck(), new MobileMissileLauncher(), new MobileMissileLauncher(),
+            new Tank(), new AntiAir(), new EMPCannon()
+        },
+        {
+            // Wave 16 Project due tomorrow ah.
+            new T3AntiAir(), new MobileMissileLauncher()
+        },
+        {
+            // Wave 17
+            new T3AntiAir(), new ShieldGenerator(), new Flamethrower()
+        },
+        {
+            // Wave 18 Spam everything
+            new T3AntiAir(), new ShieldGenerator(), new Flamethrower(),
+            new HeavyTank(), new HeavyTank(), new AntiAir(), new ShieldGenerator()
         }
     };
 

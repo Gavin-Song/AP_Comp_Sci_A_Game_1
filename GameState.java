@@ -2,11 +2,11 @@ import java.util.*;
 
 public class GameState  
 {
-    public static int TOTAL_CITY_HEALTH = 10000;
+    public static int TOTAL_CITY_HEALTH = 1000;
     public static int TOTAL_RESOURCE = 5000;
     public static double COST_MULTIPLIER = 2; // How much more expensive upgrade gets each time
     
-    private int city_health = 10000;
+    private int city_health = TOTAL_CITY_HEALTH;
     private long score = 0;
     
     // Upgrades
@@ -49,7 +49,8 @@ public class GameState
         this.player_resource = Math.min(this.player_total_resource, this.player_resource);
         this.player_health = Math.min(this.player_base_health, this.player_health);
         
-        this.player_resource = 9999999;
+        this.player_health = Math.max(this.player_health, 0);
+        this.city_health = Math.max(this.city_health, 0);
     }
     
     public int isGameOver() {
