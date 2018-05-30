@@ -21,6 +21,7 @@ public class MyWorld extends World
     
     public static HashMap upgrade_buttons;
 
+    private GameOverCard card;
     
     public static final int WORLD_WIDTH = 1200;
     public static final int WORLD_HEIGHT = 600;
@@ -67,7 +68,7 @@ public class MyWorld extends World
         
         
         // GUI is drawn first, then game objects, then the ground
-        this.setPaintOrder(GUI.class, Turret.class, Thruster.class, PhysicalObject.class, LandTile.class);
+        this.setPaintOrder(GameOverCard.class, GUI.class, Turret.class, Thruster.class, PhysicalObject.class, LandTile.class);
         
         
         helicopter = new Helicopter(250, 125, "Bob");
@@ -93,9 +94,11 @@ public class MyWorld extends World
         game_state.update();
         
         // Display score and time remaining
-        this.showText(String.format("Score %010d", (int)game_state.getScore()), 100, 130);
-        this.showText("Time left: " + game_state.getGameTimeRemaining(), 87, 150);
-        this.showText(String.format("Wave %03d", game_state.getSpawner().getWave()), 59, 170);
+        if (game_state.isGameOver() == 0) {
+            this.showText(String.format("Score %010d", (int)game_state.getScore()), 100, 130);
+            this.showText("Time left: " + game_state.getGameTimeRemaining(), 87, 150);
+            this.showText(String.format("Wave %03d", game_state.getSpawner().getWave()), 59, 170);
+        }
         
         // Render the cit and player health bars
         player_resource.updateLabel("Resource (+" + game_state.getPlayerResourceRate() + ")");
@@ -110,6 +113,17 @@ public class MyWorld extends World
         // Spawn waves if needed
         if (game_state.getSpawner().shouldSpawnWave()) {
             game_state.getSpawner().createWave(this);
+        }
+        
+        if (card == null) {
+            if (game_state.isGameOver() == 2) {
+                card = new BadGameOverCard();
+                addObject(card, WORLD_WIDTH / 2, WORLD_HEIGHT / 2);
+            }
+            else if (game_state.isGameOver() == 1) {
+                card = new GoodGameOverCard();
+                addObject(card, WORLD_WIDTH / 2, WORLD_HEIGHT / 2);
+            }
         }
 
         frame_count = (frame_count + 1) % 120;

@@ -57,7 +57,59 @@ public class Helicopter extends PhysicalObject implements CombatUnit
      */
     public void act() {
         super.act();
-   
+        if (MyWorld.game_state.getPlayerHealth() > 0) {
+            this.doWhileAlive();
+            
+            this.subtractHealth(10);
+            
+            /* Stop before it hits the ground */
+            if (this.getY() > Config.GROUND_Y - Config.GROUND_CLEARANCE) {
+                this.setLocation(this.getX(), Config.GROUND_Y - Config.GROUND_CLEARANCE);
+            }
+        } else {
+            this.setGravity(true);
+            this.setRotation(this.getRotation() + 1);
+            
+            /* Stop before it hits the ground */
+            if (this.getY() >= Config.GROUND_Y - 100) {
+                for (int i=0; i<5; i++) {
+                    Explosion boom = new Explosion(1000, 100, "human");
+                    this.getWorld().addObject(boom, this.getX() - 500 + (int)(Util.randomNum(0, 400)), this.getY() + (int)(Util.randomNum(-10, 10)));
+                }
+                this.die();
+                return;
+            }
+        }
+        
+        this.setLocation(600, this.getY());
+        
+        /* Stop before it reaches a ceiling */
+        if (this.getY() < 0) {
+            this.setLocation(this.getX(), 0);
+        }
+        
+
+        for (Thruster t: thrusters) {
+            t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
+        } 
+        for (Turret t: turrets) {
+            t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
+        }
+    }    
+    
+    public void die() {
+        for (Thruster t: thrusters) {
+            this.getWorld().removeObject(t);
+        } 
+        for (Turret t: turrets) {
+            this.getWorld().removeObject(t);
+        }
+        this.getImage().scale(1, 1); // Hide rather than destroy to stop errors (hax)
+        this.setLocation(600, -1);
+        this.setGravity(false);
+    }
+    
+    public void doWhileAlive() {
         if (Greenfoot.isKeyDown("UP") || Greenfoot.isKeyDown("W")) {
             this.applyForce(0, -Config.THRUSTER_FORCE_Y);
         }
@@ -73,37 +125,21 @@ public class Helicopter extends PhysicalObject implements CombatUnit
             MyWorld.camera.scrollX(-(int)(this.getvx()), this.getWorld());
         }
         
-        this.setLocation(600, this.getY());
-        
-        /* Stop before it hits the ground */
-        if (this.getY() > Config.GROUND_Y - Config.GROUND_CLEARANCE) {
-            this.setLocation(this.getX(), Config.GROUND_Y - Config.GROUND_CLEARANCE);
-        }
-        
-        /* Stop before it reaches a ceiling */
-        if (this.getY() < 0) {
-            this.setLocation(this.getX(), 0);
-        }
-        
         for (Turret t: turrets) {
             if(Greenfoot.getMouseInfo() != null) {
                 t.target(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
             }
-            t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
             t.fire(this.getvx(), this.getvy());
         }
         
         for (Thruster t: thrusters) {
-            t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
             if (this.getvx() == 0) {
                 t.setRotation(0);
             } else {
                 t.setRotation((int)(30 * this.getvx() / 10));
             } 
         }
-        
-        // Add your action code here.
-    }    
+    }
     
     public String getTeam() {
         return "human";

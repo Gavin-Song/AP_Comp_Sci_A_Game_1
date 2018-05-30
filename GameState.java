@@ -50,14 +50,18 @@ public class GameState
         this.player_health = Math.min(this.player_base_health, this.player_health);
         
         this.player_resource = 9999999;
-        
-        /* Game over checks */
-        if (city_health <= 0 || player_health <= 0) {
-            // Bad game overs
-        } else if (this.getTimeRemaining() <= 0) {
-            // Good game over
-        }
     }
+    
+    public int isGameOver() {
+         /* Game over checks */
+        if (city_health <= 0 || player_health <= 0) {
+            return 2;
+        } else if (this.getTimeRemaining() <= 0) {
+            return 1;
+        }
+        return 0;
+    }
+ 
     
     public void doUpgrade(String category) {
         // Invalid upgrade category
