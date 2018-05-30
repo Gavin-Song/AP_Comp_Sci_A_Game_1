@@ -11,6 +11,7 @@ public class Helicopter extends PhysicalObject implements CombatUnit
 {
     private String name;
     private ArrayList<Turret> turrets;
+    private ArrayList<Thruster> thrusters;
     
     public Helicopter(int w, int h, String name) {
         super(w, h, Config.HELICOPTER_MASS);
@@ -19,11 +20,20 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         this.name = name;
         
         this.turrets = new ArrayList<Turret>();
-        this.turrets.add(new MachineGunTurret(50, 30, 20, 5, "human"));
+        this.turrets.add(new MachineGunTurret(50, 30, 20, 45, "human"));
+        
+        this.thrusters = new ArrayList<Thruster>();
+        this.thrusters.add(new Thruster(50, 25, -110, 40));
+        this.thrusters.add(new Thruster(50, 25, 110, 40));
+        this.thrusters.add(new Thruster(30, 15, -50, 60));
+        this.thrusters.add(new Thruster(30, 15, 50, 60));
     }
     
     public void addedToWorld(World w) {
         for (Turret t: turrets) {
+            w.addObject(t, this.getX() + t.getrx(), this.getY() + t.getry());
+        }
+        for (Thruster t: thrusters) {
             w.addObject(t, this.getX() + t.getrx(), this.getY() + t.getry());
         }
     }
@@ -70,12 +80,26 @@ public class Helicopter extends PhysicalObject implements CombatUnit
             this.setLocation(this.getX(), Config.GROUND_Y - Config.GROUND_CLEARANCE);
         }
         
+        /* Stop before it reaches a ceiling */
+        if (this.getY() < 0) {
+            this.setLocation(this.getX(), 0);
+        }
+        
         for (Turret t: turrets) {
             if(Greenfoot.getMouseInfo() != null) {
                 t.target(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
             }
             t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
             t.fire(this.getvx(), this.getvy());
+        }
+        
+        for (Thruster t: thrusters) {
+            t.setLocation(this.getX() + t.getrx(), this.getY() + t.getry());
+            if (this.getvx() == 0) {
+                t.setRotation(0);
+            } else {
+                t.setRotation((int)(30 * this.getvx() / 10));
+            } 
         }
         
         // Add your action code here.

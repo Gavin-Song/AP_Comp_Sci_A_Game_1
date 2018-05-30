@@ -12,7 +12,7 @@ public class FireBullet extends Bullet
     private static int BASE_LIFE = 40;
     
     public FireBullet(String team) {
-        this(team, 20);
+        this(team, 8);
     }
     
     public FireBullet(String team, int damage) {

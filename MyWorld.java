@@ -67,10 +67,10 @@ public class MyWorld extends World
         
         
         // GUI is drawn first, then game objects, then the ground
-        this.setPaintOrder(GUI.class, PhysicalObject.class, LandTile.class);
+        this.setPaintOrder(GUI.class, Turret.class, Thruster.class, PhysicalObject.class, LandTile.class);
         
         
-        helicopter = new Helicopter(50, 50, "Bob");
+        helicopter = new Helicopter(250, 125, "Bob");
         addObject(helicopter, 600, 250);
         
         for (int i=-12 * 5; i<12 * 2; i++) {

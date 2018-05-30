@@ -50,6 +50,13 @@ public class GameState
         this.player_health = Math.min(this.player_base_health, this.player_health);
         
         this.player_resource = 9999999;
+        
+        /* Game over checks */
+        if (city_health <= 0 || player_health <= 0) {
+            // Bad game overs
+        } else if (this.getTimeRemaining() <= 0) {
+            // Good game over
+        }
     }
     
     public void doUpgrade(String category) {
@@ -72,33 +79,33 @@ public class GameState
             Turret t = null;
             switch (this.player_turret_count) {
                 case 0: {
-                    t = new WeakGatlingGun(36, 20, -120, -30, "human");
+                    t = new WeakGatlingGun(36, 20, -120, 30, "human");
                     break;
                 }
                 case 1: {
-                    t = new StrongTankTurret(30, 10, -50, 5, "human");
+                    t = new StrongTankTurret(30, 10, -50, 55, "human");
                     break;
                 }
                 case 2: {
-                    t = new MachineGunTurret(50, 30, 70, -40, "human");
+                    t = new MachineGunTurret(50, 30, 90, -40, "human");
                     break;
                 }
                 case 3: {
                     // Remove the MachineGunTurret for a Missile launcher
                     MyWorld.helicopter.removeTurret(3);
-                    t = new GuidedMissileTurret(60, 30, 70, -40, "human");
+                    t = new GuidedMissileTurret(60, 30, 90, -40, "human");
                     break;
                 }
                 case 4: {
                     // Remove the ShellTurret for an EMPTurret
                     MyWorld.helicopter.removeTurret(2);
-                    t = new EMPTurret(30, 10, -50, 5, "human");
+                    t = new EMPTurret(30, 10, -50, 55, "human");
                     break;
                 }
                 case 5: {
                     // Swap missile turret for fire turret
                     MyWorld.helicopter.removeTurret(2);
-                    t = new FireTurret(60, 30, 70, -40, "human");
+                    t = new FireTurret(60, 30, 90, -40, "human");
                     break;
                 }
                 default: {
@@ -131,9 +138,16 @@ public class GameState
         return (int)upgrade_costs.get(category);
     }
     
+    public int getTimeRemaining() {
+        return game_length - this.getSecondsPassed();
+    }
+    
+    public int getSecondsPassed() {
+        return (int)((System.currentTimeMillis() - start_time) / 1000);
+    }
+    
     public String getGameTimeRemaining() {
-        int seconds_passed = (int)((System.currentTimeMillis() - start_time) / 1000);
-        int time_remaining = game_length - seconds_passed;
+        int time_remaining = this.getTimeRemaining();
         
         int minutes = time_remaining / 60;
         int seconds =  time_remaining % 60;

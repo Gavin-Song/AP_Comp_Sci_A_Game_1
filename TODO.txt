@@ -37,7 +37,10 @@ Animated textures
 GameOver when city dies or player dies
 GameOver when time runs out (nuke)
 
-y height limit
+
+
+Explode the ship and add burning wreckage?
+
 
 
 Wombat vechicles
