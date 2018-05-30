@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class EMPCannon extends WombatLandUnit
 {
     public EMPCannon(){
-        super(80, 40, 30, "Coldflash", "Mobile EMP Cannon"); // width, height, health, name, desc
+        super(80, 40, 30, "Coldflash", "Mobile EMP Cannon", 50); // width, height, health, name, desc
         this.setFriction(false);
     }
     

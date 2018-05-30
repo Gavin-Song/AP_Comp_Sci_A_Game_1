@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LAB extends WombatLandUnit
 {
     public LAB(){
-        super(30, 30, 10, "WLB-X", "Light Assault Wombot"); // width, height, health, name, desc
+        super(30, 30, 10, "WLB-X", "Light Assault Wombot", 10); // width, height, health, name, desc
         this.setFriction(false);
     }
     

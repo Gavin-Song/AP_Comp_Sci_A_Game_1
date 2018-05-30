@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AntiAir extends WombatLandUnit
 {
     public AntiAir(){
-        super(80, 40, 30, "Honeyeater", "Light Mobile Anti-air Cannon"); // width, height, health, name, desc
+        super(80, 40, 30, "Honeyeater", "Light Mobile Anti-air Cannon", 30); // width, height, health, name, desc
         this.setFriction(false);
     }
     

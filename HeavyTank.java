@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HeavyTank extends WombatLandUnit
 {
     public HeavyTank(){
-        super(80, 40, 600, "WA-Armadillo", "Heavy Landcruiser"); // width, height, health, name, desc
+        super(80, 40, 600, "WA-Armadillo", "Heavy Landcruiser", 150); // width, height, health, name, desc
         this.setFriction(false);
     }
     

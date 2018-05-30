@@ -11,15 +11,17 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
 {
     private double life;
     private double total_life;
+    private double city_damage;
     
     private ArrayList<Turret> turrets;
     private String name;
     private String desc;
     
-    public WombatLandUnit(int w, int h, double life, String name, String desc) {
+    public WombatLandUnit(int w, int h, double life, String name, String desc, double city_damage) {
         super(w, h, 10);
         this.life = life;
         this.total_life = life;
+        this.city_damage = city_damage;
         
         this.name = name;
         this.desc = desc;
@@ -78,7 +80,7 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
         // Off screen. Damage the city
         if (this.getX() - MyWorld.camera.getx() < -MyWorld.camera.getLeftXBound()) {
             this.getWorld().removeObject(this);
-            MyWorld.game_state.damageCity((int)this.life);
+            MyWorld.game_state.damageCity((int)(this.city_damage * this.getLifePercent()));
             return;
         }
         
@@ -109,6 +111,10 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
     public void setHealth(int h) {
         this.total_life = h;
         this.life = h;
+    }
+    
+    public double getCityDamage() {
+        return this.city_damage;
     }
     
     public ArrayList<Turret> getTurrets() {

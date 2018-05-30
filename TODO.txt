@@ -17,8 +17,7 @@ Wombat vechicles
 
 	Plane
 	Guided missile
-	
-	Experimental megabot
+
 	Wombat Tank (EXP)
 	Experimental land carrier
 

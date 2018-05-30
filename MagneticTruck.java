@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MagneticTruck extends WombatLandUnit
 {
     public MagneticTruck(){
-        super(100, 50, 50, "Eucalyptus", "Magnetic Tractor Truck"); // width, height, health, name, desc
+        super(100, 50, 50, "Eucalyptus", "Magnetic Tractor Truck", 70); // width, height, health, name, desc
         this.setFriction(false);
     }
     

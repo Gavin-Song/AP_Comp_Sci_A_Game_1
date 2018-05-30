@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ShieldGenerator extends WombatLandUnit
 {
     public ShieldGenerator(){
-        super(350, 150, 1500, "Tree of Life", "Mobile Shield Dome Generator"); // width, height, health, name, desc
+        super(350, 150, 1500, "Tree of Life", "Mobile Shield Dome Generator", 2); // width, height, health, name, desc
         this.setFriction(false);
     }
     

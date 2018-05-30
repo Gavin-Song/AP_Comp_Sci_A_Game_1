@@ -2,7 +2,7 @@ import java.util.*;
 
 public class GameState  
 {
-    public static int TOTAL_CITY_HEALTH = 5000;  // Max city health
+    public static int TOTAL_CITY_HEALTH = 10000;  // Max city health
     public static int TOTAL_RESOURCE = 5000;  // Base max resource
     public static double COST_MULTIPLIER = 1.5; // How much more expensive upgrade gets each time
     
@@ -13,9 +13,9 @@ public class GameState
     private int player_base_health = Config.HELICOPTER_LIFE;
     private int player_health = player_base_health;
     private int player_resource = 0;
-    private int player_resource_rate = 1;
+    private int player_resource_rate = 2;
     private int player_total_resource = TOTAL_RESOURCE;
-    private int player_regen_rate = 0;
+    private int player_regen_rate = 2;
     private int player_turret_count = 0;
     private HashMap upgrade_costs;
     
@@ -39,20 +39,20 @@ public class GameState
     }
     
     public void update() {
-        if (Math.random() < 0.4) {
-            this.player_resource += this.player_resource_rate;
+        if (this.isGameOver() == 0) {
+            if (Math.random() < 0.4) {
+                this.player_resource += this.player_resource_rate;
+            }
+            if (Math.random() < 0.14) {
+                this.player_health += this.player_regen_rate;
+            }
+            
+            this.player_resource = Math.min(this.player_total_resource, this.player_resource);
+            this.player_health = Math.min(this.player_base_health, this.player_health);
+            
+            this.player_health = Math.max(this.player_health, 0);
+            this.city_health = Math.max(this.city_health, 0);
         }
-        if (Math.random() < 0.14) {
-            this.player_health += this.player_regen_rate;
-        }
-        
-        this.player_resource = Math.min(this.player_total_resource, this.player_resource);
-        this.player_health = Math.min(this.player_base_health, this.player_health);
-        
-        this.player_health = Math.max(this.player_health, 0);
-        this.city_health = Math.max(this.city_health, 0);
-        
-        this.player_resource = 9999999;
     }
     
     public int isGameOver() {
@@ -80,7 +80,7 @@ public class GameState
 
         // Do the upgrade
         if ("regen".equals(category)) {
-            this.player_regen_rate += 1;
+            this.player_regen_rate += 8;
         }
         else if ("turret".equals(category)) {
             Turret t = null;

@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class T3AntiAir extends WombatLandUnit
 {
     public T3AntiAir(){
-        super(110, 50, 400, "Slaughterhouse", "Mobile Rapid Fire Anti-Air Ordnance"); // width, height, health, name, desc
+        super(110, 50, 400, "Slaughterhouse", "Mobile Rapid Fire Anti-Air Ordnance", 120); // width, height, health, name, desc
         this.setFriction(false);
     }
     

@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TurtleTank extends WombatLandUnit
 {
     public TurtleTank(){
-        super(80, 40, 500, "Turtle Mark 3", "Heavy Siege Tank"); // width, height, health, name, desc
+        super(80, 40, 500, "Turtle Mark 3", "Heavy Siege Tank", 250); // width, height, health, name, desc
         this.setFriction(false);
     }
     

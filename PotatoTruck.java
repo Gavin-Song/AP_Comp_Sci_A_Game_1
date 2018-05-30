@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PotatoTruck extends WombatLandUnit
 {
     public PotatoTruck(){
-        super(80, 40, 10, "Potato Truck", "Light Potatocruiser"); // width, height, health, name, desc
+        super(80, 40, 10, "Potato Truck", "Light Potatocruiser", 10); // width, height, health, name, desc
         this.setFriction(false);
     }
     

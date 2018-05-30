@@ -94,12 +94,25 @@ public class Spawner
             // Wave 18 Spam everything
             new T3AntiAir(), new ShieldGenerator(), new Flamethrower(),
             new HeavyTank(), new HeavyTank(), new AntiAir(), new ShieldGenerator()
+        },
+        { 
+            // Wave 19. Just give up pls
+            new ShieldGenerator(), new Tank(), new ShieldGenerator(), new Tank()
+        },
+        {
+            // Wave 20 First experimental
+            new ExperimentalWombat()
+        },
+        {
+            // Wave 21. LABs make a come back!
+            new LAB(), new LAB(), new LAB(), new LAB()
         }
+        
     };
 
     public static final int UNIT_SPACING = 100; // Space between unit spawns
     public static final int X_OFFSET = 100; // Offset from edge of screen
-    public static final int TIME_BETWEEN_WAVES = 8; // Seconds between waves
+    public static final int TIME_BETWEEN_WAVES = 13; // Seconds between waves
     public static final int END_GAME_EXTRA_TIME = 10; // Extra seconds after last wave spawns
     
     private int current_wave = 0;

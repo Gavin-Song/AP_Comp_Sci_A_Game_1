@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MobileMissileLauncher extends WombatLandUnit
 {
     public MobileMissileLauncher(){
-        super(80, 40, 150, "Javelin", "Mobile Misile Launcher"); // width, height, health, name, desc
+        super(80, 40, 150, "Javelin", "Mobile Misile Launcher", 120); // width, height, health, name, desc
         this.setFriction(false);
     }
     
