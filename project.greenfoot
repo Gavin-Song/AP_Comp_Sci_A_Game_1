@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue May 29 21:26:00 EDT 2018
+#Tue May 29 21:36:36 EDT 2018
 target49.type=InterfaceTarget
 target24.type=ClassTarget
 target16.name=TurtleTank
@@ -392,6 +392,7 @@ target53.showInterface=false
 dependency121.from=PotatoTruck
 target5.type=ClassTarget
 dependency78.to=CombatUnit
+class.EMPCannon.image=magnet_truck.png
 dependency63.from=Helicopter
 target1.width=110
 dependency39.type=UsesDependency
@@ -410,7 +411,7 @@ dependency32.to=GUI
 target23.name=T3AntiAir
 dependency38.from=MyWorld
 dependency105.to=MyWorld
-simulation.speed=51
+simulation.speed=48
 target50.name=GameState
 target55.typeParameters=
 target47.height=50
@@ -701,6 +702,7 @@ dependency43.type=UsesDependency
 dependency47.to=UnitDisplayCard
 dependency95.type=UsesDependency
 target28.typeParameters=
+class.GoodGameOverCard.image=gameover_good.png
 dependency70.type=UsesDependency
 class.MyWorld.superclass=greenfoot.World
 class.MagneticTurret.superclass=Turret
