@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=EMPTurret
+comment0.text=\r\n\ Stun\ turret.\ Fires\ EMPBullets\ that\ freeze\r\n\ units\ in\ place.\r\n\ \r\n\ @author\ (Gavin\ Song)\ \r\n\ @version\ (1.0.0)\r\n
+comment1.params=w\ h\ rx\ ry\ team
+comment1.target=EMPTurret(int,\ int,\ int,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+numComments=3

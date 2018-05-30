@@ -56,12 +56,10 @@ public abstract class Bullet extends PhysicalObject
                 }
                 else if (intersect.get(0) instanceof CombatUnit) {
                     CombatUnit collided = (CombatUnit)intersect.get(0);
-                    if ("human".equals( (collided).getTeam() ) && "wombat".equals(this.team)) {
+                    if ("human".equals( (collided).getTeam() ) && "wombat".equals(this.team) ||
+                        "wombat".equals( (collided).getTeam() ) && "human".equals(this.team)) {
                         this.life = 0;
-                        collided.subtractHealth(this.damage);
-                    }
-                    else if ("wombat".equals( (collided).getTeam() ) && "human".equals(this.team)) {
-                        this.life = 0;
+                        this.affectEnemy(collided);
                         collided.subtractHealth(this.damage);
                     }
                 } 
@@ -75,6 +73,10 @@ public abstract class Bullet extends PhysicalObject
     
     public double getdamage() {
         return this.damage;
+    }
+    
+    public void affectEnemy(CombatUnit c) {
+        // Empty for now. can be overriden
     }
     
     public String getTeam() {

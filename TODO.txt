@@ -1,25 +1,29 @@
-More turret types
-	rocket barrage
-	drop bombs
-	emp wave emitter
-		freezes all enemies for a while
-	little doctor device 
-	
-	defense turrets:
-		missile defense
-		AA railgun
-		shield dome
-		
 
+		
+Ideas:
+	FireballTurret
+		Explosions
+	EMPTurret
+	QuantumPhasicMicrobeam
+
+
+TurretProgression
+	Weak Gatling Gun
+	Shell Turret
+	Another machine gun
+	GuidedMissile Turret (swap out shell turret)
+	EMPTurret
+	Fireturret (Swap out guidedmissile turret)
+	
+	Fireball turret (Swap out fireturret)
+	(Swap out machinegun turret)
+	QuantumPhasicMicrobeam
+	(Swap out quatumphasic)
+	NULL RAINBOW LAZOR
 
 
 Create "damage" poroperty for units instead 
 	multiply by life_percent
-
-
-
-Temp powerups with cooldowns
-
 
 Abilities
 	Upgrade turrets
@@ -28,13 +32,15 @@ Add sound
 
 Animated textures
 
-Explode units on death
+
+
+GameOver when city dies or player dies
+GameOver when time runs out (nuke)
+
+y height limit
 
 
 Wombat vechicles
-	T2 Laser weapon
-
-	
 	T3 Parasite - low constant laser weapon
 
 	T2 AA

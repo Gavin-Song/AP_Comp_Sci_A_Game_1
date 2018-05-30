@@ -10,7 +10,7 @@ import java.util.*;
 public class MyWorld extends World
 {
 
-    public static PhysicalObject helicopter;
+    public static Helicopter helicopter;
     public static Camera camera;
     public static UnitDisplayCard unit_card;
     public static GameState game_state;

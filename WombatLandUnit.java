@@ -75,7 +75,7 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
             MyWorld.unit_card.setTextByUnit(this);
         } 
         
-        // Off screen
+        // Off screen. Damage the city
         if (this.getX() - MyWorld.camera.getx() < -MyWorld.camera.getLeftXBound()) {
             this.getWorld().removeObject(this);
             MyWorld.game_state.damageCity((int)this.life);
@@ -90,14 +90,21 @@ public abstract class WombatLandUnit extends PhysicalObject implements CombatUni
             t.fire(this.getvx(), this.getvy());
         }
         
+        this.die();
+    }    
+    
+    private void die() {
         if (this.life <= 0) {
+            Explosion death_nuke = new Explosion((int)this.total_life, 50, "wombat");
+            this.getWorld().addObject(death_nuke, this.getX(), this.getY());
+            
             for (Turret t: turrets) {
                 this.getWorld().removeObject(t);
             }
             this.getWorld().removeObject(this);
             MyWorld.game_state.incrementScore((int)this.total_life);
         }
-    }    
+    }
     
     public ArrayList<Turret> getTurrets() {
         return this.turrets;

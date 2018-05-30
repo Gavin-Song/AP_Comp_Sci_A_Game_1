@@ -36,6 +36,11 @@ public abstract class Turret extends Actor
         this.getImage().scale(w, h);
     }
     
+    public void removeAngleRotationLimits() {
+        this.limit_angle_rotation[0] = 0;
+        this.limit_angle_rotation[1] = 360;
+    }
+    
     
     /**
      * Act - do whatever the Turret wants to do. This method is called whenever

@@ -16,6 +16,7 @@ public class GameState
     private int player_resource_rate = 1;
     private int player_total_resource = TOTAL_RESOURCE;
     private int player_regen_rate = 0;
+    private int player_turret_count = 0;
     private HashMap upgrade_costs;
     
     public static String[] possible_upgrades = {
@@ -47,6 +48,8 @@ public class GameState
         
         this.player_resource = Math.min(this.player_total_resource, this.player_resource);
         this.player_health = Math.min(this.player_base_health, this.player_health);
+        
+        this.player_resource = 9999999;
     }
     
     public void doUpgrade(String category) {
@@ -66,13 +69,57 @@ public class GameState
             this.player_regen_rate += 1;
         }
         else if ("turret".equals(category)) {
+            Turret t = null;
+            switch (this.player_turret_count) {
+                case 0: {
+                    t = new WeakGatlingGun(36, 20, -120, -30, "human");
+                    break;
+                }
+                case 1: {
+                    t = new StrongTankTurret(30, 10, -50, 5, "human");
+                    break;
+                }
+                case 2: {
+                    t = new MachineGunTurret(50, 30, 70, -40, "human");
+                    break;
+                }
+                case 3: {
+                    // Remove the MachineGunTurret for a Missile launcher
+                    MyWorld.helicopter.removeTurret(3);
+                    t = new GuidedMissileTurret(60, 30, 70, -40, "human");
+                    break;
+                }
+                case 4: {
+                    // Remove the ShellTurret for an EMPTurret
+                    MyWorld.helicopter.removeTurret(2);
+                    t = new EMPTurret(30, 10, -50, 5, "human");
+                    break;
+                }
+                case 5: {
+                    // Swap missile turret for fire turret
+                    MyWorld.helicopter.removeTurret(2);
+                    t = new FireTurret(60, 30, 70, -40, "human");
+                    break;
+                }
+                default: {
+                    // Not upgradable
+                    break;
+                }
+            }
+            if (t == null) {
+                return;
+            }
+            
+            this.player_turret_count++;
+            t.removeAngleRotationLimits();
+            MyWorld.helicopter.addTurret(t);
         }
         else if ("health".equals(category)) {
             this.player_base_health += 2000;
         }
         else if ("resource".equals(category)) {
             this.player_resource_rate += 1;
-            this.player_total_resource += 2000;
+            this.player_total_resource *= 1.75;
         }
         
         // Make the new upgrade even more expensive

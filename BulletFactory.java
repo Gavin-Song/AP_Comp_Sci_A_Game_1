@@ -19,6 +19,8 @@ public class BulletFactory
             return new ShellBullet(team);
         } else if ("potato_gun".equals(type)) {
             return new PotatoBullet(team);
+        } else if ("emp_gun".equals(type)) {
+            return new EMPBullet(team);
         }
         return null;
     }
@@ -34,6 +36,8 @@ public class BulletFactory
             return new ShellBullet(team, damage);
         } else if ("potato_gun".equals(type)) {
             return new PotatoBullet(team, damage);
+        } else if ("emp_gun".equals(type)) {
+            return new EMPBullet(team, damage);
         }
         return null;
     }

@@ -18,16 +18,23 @@ public class Helicopter extends PhysicalObject implements CombatUnit
         
         this.name = name;
         
-        turrets = new ArrayList<Turret>();
-        //turrets.add(new GuidedMissileTurret(30, 20, -70, 5, "human"));
-        //turrets.add(new MagneticTurret(30, 20, 70, 5, "human"));
-        turrets.add(new MachineGunTurret(50, 30, 20, 5, "human"));
+        this.turrets = new ArrayList<Turret>();
+        this.turrets.add(new MachineGunTurret(50, 30, 20, 5, "human"));
     }
     
     public void addedToWorld(World w) {
         for (Turret t: turrets) {
             w.addObject(t, this.getX() + t.getrx(), this.getY() + t.getry());
         }
+    }
+    
+    public void addTurret(Turret t) {
+        this.turrets.add(t);
+        this.getWorld().addObject(t, this.getX() + t.getrx(), this.getY() + t.getry());
+    }
+    
+    public void removeTurret(int n) {
+        this.getWorld().removeObject(this.turrets.remove(n));
     }
     
     public void subtractHealth(int damage) {

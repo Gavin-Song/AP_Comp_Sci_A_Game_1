@@ -8,9 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class UpgradeButton extends Button
 {
+    private static int MIN_TIMEOUT = 700; // Min timeout in ms for keyboard
+    
     private String category;
     private int id;
     private GreenfootImage image;
+    private long last_time_clicked = 0;
     
     public UpgradeButton(int w, int h, String text, String category, int id) {
         super(w, h, text);
@@ -44,8 +47,10 @@ public class UpgradeButton extends Button
         
         this.handleClicked();
         
-        if (Greenfoot.isKeyDown(String.valueOf(this.id))) {
+        if (Greenfoot.isKeyDown(String.valueOf(this.id)) && 
+                (System.currentTimeMillis() - last_time_clicked) > MIN_TIMEOUT) {
             this.onClick();
+            last_time_clicked = System.currentTimeMillis();
         }
     }  
 }

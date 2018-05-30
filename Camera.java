@@ -16,7 +16,7 @@ public class Camera
     private int y = 0;
     
     /* Camera x and y values are "backwards" from normal (left = pos, right = neg) */
-    private int x_left_bound = MyWorld.WORLD_WIDTH  * 5;
+    private int x_left_bound = MyWorld.WORLD_WIDTH * 3;
     private int x_right_bound = -MyWorld.WORLD_WIDTH;
 
     public Camera()
